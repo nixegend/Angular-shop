@@ -1,0 +1,14 @@
+<div class="productsBox">
+    <div class="row" ng-animate="'animate'"
+       ng-repeat="row in (displayProducts.length/boxesInRow | rows)">
+        <div class="col-md-3 col-sm-6" ng-repeat="(key,val) in displayProducts.slice(boxesInRow*$index, boxesInRow*$index + boxesInRow) | filter:q | orderBy:predicate:reverse">
+            <div class="box">
+                <a ng-href="#/products/{{val.category}}/{{val.id}}" class="thumb" title="{{val.name}}">
+                    <img ng-src="img/products/{{val.category}}/{{val.img}}" alt="{{val.name}}">
+                </a>
+                <a ng-href="#/products/{{val.category}}/{{val.id}}">{{val.name}}</a>
+            <span>Price: <b>$ {{val.price}}</b></span>
+    		</div>
+		</div>
+	</div>
+</div>

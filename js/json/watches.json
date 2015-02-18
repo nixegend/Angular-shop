@@ -1,0 +1,82 @@
+{
+  "phoneID-0": {
+    "name" : "Nokia",
+    "model" : "N37"
+  },
+  "phoneID-1": {
+    "name" : "Nokia",
+    "model" : "N9"
+  },
+  "phoneID-2": {
+    "name" : "Nokia",
+    "model" : "N93"
+  },
+  "phoneID-3": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-4": {
+    "name" : "Nokia",
+    "model" : "C6"
+  },
+  "phoneID-5": {
+    "name" : "Nokia",
+    "model" : "C5"
+  },
+  "phoneID-6": {
+    "name" : "Nokia",
+    "model" : "5300"
+  },
+  "phoneID-7": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-8": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-9": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-10": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-11": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-12": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-13": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-14": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-15": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-16": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-17": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-18": {
+    "name" : "Nokia",
+    "model" : "N95"
+  },
+  "phoneID-19": {
+    "name" : "Nokia",
+    "model" : "N95"
+  }
+}

@@ -1,0 +1,10 @@
+<ul class="productsList">
+	<li ng-animate="'animate'"
+		ng-repeat="(key,val) in displayProducts | filter:q | orderBy:predicate:reverse">
+            <a ng-href="#/products/{{val.category}}/{{val.id}}" class="thumb" title="{{val.name}}">
+                <img ng-src="img/products/{{val.category}}/{{val.img}}" alt="{{val.name}}">
+            </a>
+            <a ng-href="#/products/{{val.category}}/{{val.id}}">{{val.name}}</a>
+		<span>Price: <b>$ {{val.price}}</b></span>
+	</li>
+</ul>

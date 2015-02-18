@@ -1,0 +1,92 @@
+<div id="productsSerchSort" class="row">
+
+	<aside id="leftAside" class="col-md-3">
+		<h4>Phones</h4>
+		<categories-menu categories="categories" id="categoriesMenu"></categories-menu>
+		<form id="productsFilter" name="productsFilter" class="form-group">
+			<div class="criteriaBox" ng-repeat="(key, arrValue) in filterCriteria">
+				<h5>{{key}} <i class="fa fa-filter"></i></h5>
+				<label class="checkbox" ng-repeat="item in arrValue">
+					<input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}
+					<span class="badge">{{ (dataProducts | filter:count(item, key)).length }}</span>
+				</label>
+			</div>
+			<button type="reset" class="btn btn-danger btn-xs"
+			ng-click="filtersReset()">Reset filter</button>
+		</form>
+	</aside>
+
+
+	<section class="col-md-9">
+		<div class="row">
+			<div class="col-md-4">
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon"><i class="fa fa-search"></i></span>
+						<input type="text" id="serchProducts" ng-model="q" placeholder="Serch product ..." class="form-control input-sm">
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div id="selectSortBy" class="input-group input-group-sm">
+					<span class="input-group-addon">Sort by:</span>
+					  	<select
+					  	class="form-control"
+					  	ng-model="sortCriteria"
+					  	ng-options="sortoption for sortoption in sortoptions"
+					  	ng-change="sortChanged()">
+						</select>
+					<span id="btnSort" ng-click="sortDescAscBtn()" class="input-group-addon btn-primary">
+						<i id="sortDescAsc" class="fa fa-sort-amount-asc"></i>
+					</span>
+				</div>
+				<div class="btn-group btn-group-sm">
+					<label class="btn btn-primary"
+					ng-model="radioModel"
+					btn-radio="'box'"
+					ng-click="boxListLayout('box')">
+						<i class="fa fa-th"></i>
+					</label>
+					<label class="btn btn-primary"
+					ng-model="radioModel"
+					btn-radio="'list'"
+					ng-click="boxListLayout('list')">
+						<i class="fa fa-th-list"></i>
+					</label>
+				</div>
+				<div class="numsProducts">All products <b class="badge">{{dataProducts.length}}</b></div>
+			</div>
+		</div>
+
+		<div id="products" ng-include="layout"></div>
+
+		<div id="pagination" class="row">
+			<div class="col-md-3">
+				<div class="input-group input-group-sm">
+					<span class="input-group-addon">Products on page:</span>
+					<select id="productsONpage"
+					ng-options="option for option in pagerOptions.selectArr"
+					class="form-control"
+					ng-model="pagerOptions.itemsPerPage"
+					ng-change="pageChanged()">
+					</select>
+				</div>
+			</div>
+			<div id="pager" class="col-md-6">
+				<pagination
+				total-items="pagerOptions.totalItems"
+				ng-model="pagerOptions.currentPage"
+				max-size="pagerOptions.maxSize"
+				class="pagination-sm"
+				items-per-page="pagerOptions.itemsPerPage"
+				boundary-links="true"
+				rotate="false"
+				ng-change="pageChanged()"
+				num-pages="numPages">
+				</pagination>
+			</div>
+			<div id="pageOFpages" class="col-md-3">
+				<span>Page: {{pagerOptions.currentPage}} / {{numPages}}</span>
+			</div>
+		</div>
+	</section>
+
+</div>
