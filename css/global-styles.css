@@ -47,7 +47,7 @@ header {
 
 .leftSection,
 .rightSection {
-	min-height: 60px;
+	min-height: 50px;
 }
 
 .leftSection a.navbar-brand {
@@ -55,150 +55,64 @@ header {
 	padding: 0;
 }
 
-/*
+
+.searchAndBtns {
+	padding: 8px 0;
+}
 
 #siteSearch {
-	height: 50px;
-	padding: 12px 15px;
-}
-
-
-#siteSearch input {
-	background-color: transparent;
-	border: 1px solid #ed6a6a;
-	color: #000;
-	height: 35px;
-	padding: 7px;
-	width: 75%;
-}
-
-#siteSearch span {
-	border: 1px solid #ed6a6a;
-	cursor: pointer;
-	font-size: 14px;
-	color: #000;
-	border-radius: 4px 0 0 4px;
-	display: inline-block;
-	height: 35px;
-	padding: 9px;
-}
-
-#siteSearch span:hover {
-	border: 1px solid #fff;
+	background-color: #E84040;
+	border: 1px solid #DA2525;
 	color: #fff;
 }
 
-#siteSearch input:focus {
-	border: 1px solid #fff;
+.navbarToggleBtn {
+	font-size: 21px;
+	color: #009CC0;
+	margin: 10px 5px;
+	padding: 0;
 }
 
-*/
+.navbarToggleBtn:hover {
+	color: #fff;
+}
+
 /*=================== MENU =======================*/
-/*
-#navMenu {
-	float: right;
+
+#productsBasket {
+	height: 50px;
+	margin: 0 -15px 0 0;
+	border-bottom: 50px solid #494949;
+	border-left: 50px solid #333;
+}
+
+#basketSVGicon {
+	display: inline-block;
+	vertical-align: middle;
 	padding: 0 10px;
 }
-#navMenu ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+
+#basketSVGicon #basket {
+	fill: #ff4d4d;
+	width: 32px;
+	cursor: pointer;
 }
 
-#navMenu ul li {
-	display: block;
-	position: relative;
-	float: left;
+#basketSVGicon:hover #basket {
+	fill: #fff;
 }
 
-#navMenu li ul {
-	display: none;
-	min-width: 140px;
-	position: absolute;
-	z-index: 3;
+#btnDown {
+	cursor: pointer;
+	font-size: 12px;
+	border-left: 1px solid #5E5E5E;
+	color: #ff4d4d;
+	padding: 19px 10px;
 }
 
-#navMenu ul li a:hover,
-#siteSearch input:focus,
-#siteSearch span:hover,
-#navMenu ul.ng-scope li > a {
-	-webkit-transition-property: all;
-	-webkit-transition-duration: 0.5s;
-	-webkit-transition-timing-function: ease-out;
-	transition-property: all;
-	transition-duration: 0.5s;
-	transition-timing-function: ease-out;
-}
-
-#navMenu li a i {
-	color: #818181;
-	float: right;
-	padding: 5px 0 0 5px;
-}
-
-#navMenu ul li ul li a i {
-	padding: 10px 0 0 5px;
-	-ms-transform: rotate(-90deg);
-	-webkit-transform: rotate(-90deg);
-	-moz-transform: rotate(-90deg);
-	transform: rotate(-90deg);
-}
-
-#navMenu ul.ng-scope li > a {
-	padding: 6px 10px;
-	border-top: 1px solid #555;
-}
-
-#navMenu ul li a {
-	display: block;
-	padding: 20px 15px;
-	background-color: #333;
-	text-decoration: none;
-	white-space: nowrap;
-}
-
-#navMenu ul li a.active,
-#navMenu ul li a:hover {
-	background-color: #4a4b4b;
+#btnDown:hover {
 	color: #fff;
 }
-
-#navMenu li:hover > ul {
-	display: block;
-	border-left: 1px solid transparent;
-}
-
-#navMenu li:hover li {
-	float: none;
-}
-
-#navMenu li:hover a {
-
-}
-
-#navMenu li:hover li a:hover {
-
-}
-
-#navMenu li ul li {
-	border-top: 0;
-}
-
-#navMenu ul ul ul {
-	left: 100%;
-	top: 0;
-}
-
-#navMenu ul:before,
-#navMenu ul:after {
-	content: " ";
-	display: table;
-}
-
-#navMenu ul:after {
-	clear: both;
-}
-*/
 
 
 .dropdown-submenu {
@@ -206,7 +120,7 @@ header {
 }
 
 ul.dropdown-menu {
-	background-color: #ff4d4d;
+	background-color: #ddd;
 }
 
 ul.dropdown-menu li {
@@ -263,6 +177,14 @@ ul.dropdown-menu li:last-child {
     border-radius: 6px 0 6px 6px;
 }
 
+#navMenu .nav .open > a,
+#navMenu .nav > li > a:hover,
+#navMenu .nav > li > a:focus,
+#navMenu .nav .open > a:hover,
+#navMenu .nav .open > a:focus {
+	background-color: #4A4A4A;
+	color: #fff;
+}
 
 /*=================== categories menu =======================*/
 

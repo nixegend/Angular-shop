@@ -34,18 +34,18 @@
 					  	ng-options="sortoption for sortoption in sortoptions"
 					  	ng-change="sortChanged()">
 						</select>
-					<span id="btnSort" ng-click="sortDescAscBtn()" class="input-group-addon btn-primary">
+					<span id="btnSort" ng-click="sortDescAscBtn()" class="input-group-addon btn-info">
 						<i id="sortDescAsc" class="fa fa-sort-amount-asc"></i>
 					</span>
 				</div>
 				<div class="btn-group btn-group-sm">
-					<label class="btn btn-primary"
+					<label class="btn btn-info"
 					ng-model="radioModel"
 					btn-radio="'box'"
 					ng-click="boxListLayout('box')">
 						<i class="fa fa-th"></i>
 					</label>
-					<label class="btn btn-primary"
+					<label class="btn btn-info"
 					ng-model="radioModel"
 					btn-radio="'list'"
 					ng-click="boxListLayout('list')">

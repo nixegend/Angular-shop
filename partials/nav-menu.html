@@ -1,0 +1,17 @@
+<a is-active ng-href="#{{item.path}}" ng-if="!item.subLevel.length > 0">
+	{{item.name}}
+</a>
+
+<a href="#" ng-if="item.subLevel.length > 0"
+	class="dropdown-toggle" data-toggle="dropdown">
+		{{item.name}}
+	<span class="caret"></span>
+</a>
+
+<ul ng-if="item.subLevel.length > 0"
+	ng-class="{'dropdown-menu': item.subLevel.length > 0}">
+	<li ng-repeat="item in item.subLevel"
+		ng-class="{'dropdown-submenu': item.subLevel.length > 0}"
+		ng-include="navMenu">
+	</li>
+</ul>

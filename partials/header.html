@@ -1,83 +1,65 @@
 <header class="container-fluid">
+	<div class="row headerRow">
+		<section class="leftSection col-md-8">
+			<div class="navbar-header">
+			    <button type="button" class="navbar-toggle navbarToggleBtn"
+			    data-toggle="collapse"
+			    data-target=".navbar-collapse">
+					<i class="fa fa-bars"></i>
+			    </button>
+				<a class="navbar-brand" href="/#/">
+					<img src="img/logo.png" alt="logo-ng-shop">
+				</a>
+			</div>
 
-<div class="row headerRow">
-	<section class="leftSection col-md-8">
+			<div id="productsBasket" class="pull-right">
+				<i id="basketSVGicon" ng-include="basket"></i>
+				<i id="btnDown" data-toggle="dropdown" class="fa fa-caret-down"></i>
+				<ul class="dropdown-menu">
+				  <li><a href="#">product 1</a></li>
+				  <li><a href="#">product 2</a></li>
+				  <li><a href="#">product 3</a></li>
+				</ul>
+			</div>
 
-		<div class="navbar-header">
-		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-				<i class="fa fa-bars"></i>
-		    </button>
-			<a class="navbar-brand" href="/#/"><img src="img/logo.png" alt="logo-ng-shop"></a>
-		</div>
+			<nav id="navMenu" class="collapse navbar-collapse pull-right">
+				<ul class="nav navbar-nav">
+				  <li ng-repeat="item in menu" ng-class="{'dropdown': item.subLevel.length > 0}"
+				      ng-include="navMenu">
+				  </li>
+				</ul>
+			</nav>
+		</section>
 
-		<nav id="navMenu" class="collapse navbar-collapse pull-right">
-			 <script type="text/ng-template" id="menu-renderer">
-			    <a is-active ng-href="#{{item.path}}" ng-if="!item.subLevel.length > 0">
-			      {{item.name}}
-			    </a>
-
-			   	<a href="#" ng-if="item.subLevel.length > 0"
-			   	class="dropdown-toggle" data-toggle="dropdown">
-			      {{item.name}}
-			      <span class="caret"></span>
-			    </a>
-
-			    <ul ng-if="item.subLevel.length > 0"
-			    ng-class="{'dropdown-menu': item.subLevel.length > 0}">
-			        <li ng-repeat="item in item.subLevel"
-			        ng-class="{'dropdown-submenu': item.subLevel.length > 0}"
-			        ng-include="'menu-renderer'">
-			        </li>
-			    </ul>
-			</script>
-
-			<ul class="nav navbar-nav">
-			  <li ng-repeat="item in menu"
-			      ng-class="{'dropdown': item.subLevel.length > 0}"
-			      ng-include="'menu-renderer'">
-			  </li>
-			</ul>
-		</nav>
-	</section>
-
-	<section class="rightSection col-md-4">
-	    <div class="input-group">
-	       <span class="input-group-btn">
-	        <button class="btn btn-default" type="button"><i class="fa fa-search"></i></button>
-	      </span>
-	      <input type="text" class="form-control" placeholder="Site search ...">
-	      <div class="input-group-btn">
-	        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Administrator <span class="caret"></span></button>
-	        <ul class="dropdown-menu dropdown-menu-right" role="menu">
-			    <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Preferences</a></li>
-			    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
-	        </ul>
-	      </div>
-		</div>
-	</section>
-
-
-</div>
-
-
-
-
-
-<!--     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-      <ul class="nav navbar-nav">
-
-      <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-
-      <ul class="nav navbar-nav navbar-right">
-      </ul>
-
-    </div> -->
-
-
+		<section class="rightSection col-md-4">
+		    <div class="input-group searchAndBtns">
+		       <span class="input-group-btn">
+		        <button id="btnSiteSearch" class="btn btn-danger" type="button">
+		        	<i class="fa fa-search"></i>
+		        </button>
+		      </span>
+		      <input id="siteSearch" type="text" class="form-control"
+		      placeholder="Site search ...">
+		      <div class="input-group-btn">
+		        <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">
+		        	Administrator <span class="caret"></span>
+		        </button>
+		        <ul class="dropdown-menu dropdown-menu-right">
+		        <li>
+					<div id="laguages" class="btn-group btn-group-xs btn-group-justified">
+						<label class="btn btn-info"
+						ng-model="langModel" btn-radio="'ru'">RU</label>
+						<label class="btn btn-info"
+						ng-model="langModel" btn-radio="'en'">EN</label>
+						<label class="btn btn-info"
+						ng-model="langModel" btn-radio="'ua'">UA</label>
+					</div>
+		        </li>
+				    <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Preferences</a></li>
+				    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+		        </ul>
+		      </div>
+			</div>
+		</section>
+	</div>
 </header>
