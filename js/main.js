@@ -4,7 +4,6 @@ require(['config'], function() {
 		'./app',
 		'./controllers/HeaderCtrl',
 		'./controllers/FooterCtrl',
-		'./controllers/GlobalCtrl',
 		'./controllers/ProductDetailCtrl',
 		'./controllers/ProductsCtrl'
 	], function(angular, app) {

@@ -1,13 +1,13 @@
 define(['app'], function (app) {
 
-    app.directive('isActive', [ '$location', 'pageTitle', function ($location, pageTitle) {
+    app.directive('isActive', [ '$location', '$rootScope', function ($location, $rootScope) {
         return {
             restrict: 'A',
             link: function(scope, element) {
                 scope.location = $location;
                 scope.$watch('location.path()', function (path) {
                     if('#' + path == element[0].hash) {
-                        pageTitle.setTitle(element[0].innerHTML);
+                        $rootScope.pageTitle = element[0].innerText;
                         element.addClass('active');
                     } else {
                         element.removeClass('active');
@@ -16,17 +16,5 @@ define(['app'], function (app) {
             }
         };
     }]);
-
-    app.factory('pageTitle', function() {
-      var title = 'Home';
-      return {
-        title: function() {
-            return title;
-        },
-        setTitle: function(newTitle) {
-            title = newTitle;
-        }
-      };
-    });
 
 });

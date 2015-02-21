@@ -55,7 +55,6 @@ header {
 	padding: 0;
 }
 
-
 .searchAndBtns {
 	padding: 8px 0;
 }
@@ -113,7 +112,6 @@ header {
 #btnDown:hover {
 	color: #fff;
 }
-
 
 .dropdown-submenu {
     position: relative;
@@ -175,6 +173,10 @@ ul.dropdown-menu li:last-child {
     -webkit-border-radius: 6px 0 6px 6px;
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
+}
+
+#navMenu .nav > li > a.active {
+	color: #fff;
 }
 
 #navMenu .nav .open > a,
@@ -320,7 +322,7 @@ button i,
 	padding: 0;
 }
 
-/*==================================*/
+/*=======================================================*/
 
 ul.productsList {
 	padding: 0;
@@ -359,7 +361,7 @@ ul.productsList {
 	min-height: 150px;
 }
 
-/*==================================*/
+/*=======================================================*/
 
 .criteriaBox {
 	border: 1px solid #D2D2D2;
