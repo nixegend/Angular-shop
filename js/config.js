@@ -18,11 +18,10 @@ require.config({
 		//-------------------- services -----------------------//
 		'RCMservice' : 		'services/RCMservice',
 		'APIservice' : 		'services/APIservice',
-		//-------------------- directives ----------------------//
+		//------------------- directives ---------------------//
 		'directFooter' : 	'directives/footer',
 		'directHeader' : 	'directives/header',
-		'isActiveLink' : 	'directives/isActiveLink',
-		'directCtMenu' : 	'directives/categoriesMenu'
+		'isActiveLink' : 	'directives/isActiveLink'
 	},
 	shim: {
 		'angular': {

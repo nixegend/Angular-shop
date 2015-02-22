@@ -1,0 +1,15 @@
+<a is-active ng-href="#{{item.path}}" ng-if="!item.subLevel.length > 0">
+  {{item.name}}
+</a>
+
+<span class="head" ng-click="toggleShowHideMenu($event)" ng-if="item.subLevel.length > 0">
+  <i class="fa fa-caret-down"></i> {{item.name}} <i class="fa fa-level-down"></i>
+</span>
+
+<ul ng-if="item.subLevel.length > 0"
+  ng-class="{'subMenuContainer': item.subLevel.length > 0}">
+  <li ng-repeat="item in item.subLevel"
+    ng-class="{'subMenuItem': item.subLevel.length > 0}"
+    ng-include="categoriesMenu">
+  </li>
+</ul>
