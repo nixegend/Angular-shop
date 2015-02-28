@@ -12,14 +12,59 @@
 				</a>
 			</div>
 
-			<div id="productsBasket" class="pull-right">
+			<div id="productsBasket" class="pull-right" data-toggle="modal" data-target=".bs-example-modal-lg">
+				<i class="fa fa-arrow-circle-down btnDown empty"></i>
 				<i id="basketSVGicon" ng-include="basket"></i>
-				<i id="btnDown" data-toggle="dropdown" class="fa fa-caret-down"></i>
-				<ul class="dropdown-menu">
-				  <li><a href="#">product 1</a></li>
-				  <li><a href="#">product 2</a></li>
-				  <li><a href="#">product 3</a></li>
-				</ul>
+			</div>
+
+			<div class="modal fade bs-example-modal-lg">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<i class="fa fa-times-circle"></i>
+						</button>
+							<h4 class="modal-title">
+								<i class="fa fa-shopping-cart"></i>
+								Products basket
+							</h4>
+						</div>
+							<table class="table">
+								<thead>
+									<tr>
+										<th>ID</th>
+										<th></th>
+										<th>Quantity</th>
+										<th>Amount</th>
+										<th>Total</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr ng-repeat="item in basket">
+										<td><i ng-click="item.removeItemById(item.id)"
+										class="fa fa-trash-o"></i></td>
+										<td>{{ item.getName() }}</td>
+										<td><i class="fa fa-minus"
+										ng-class="{'disabled':item.getQuantity()==1}"
+											ng-click="item.setQuantity(-1, true)"></i>
+											{{ item.getQuantity() | number }}
+											<i class="fa fa-plus"
+											ng-click="item.setQuantity(1, true)"></i>
+										</td>
+										<td>{{ item.getPrice() | currency }}</td>
+										<td>{{ item.getTotal() | currency }}</td>
+									</tr>
+								</tbody>
+							</table>
+
+						<div class="modal-footer">
+							<button class="btn btn-primary" type="button">
+								<i class="fa fa-credit-card"></i>
+								Checkout
+							</button>
+						</div>
+					</div>
+				</div>
 			</div>
 
 			<nav id="navMenu" class="collapse navbar-collapse pull-right">

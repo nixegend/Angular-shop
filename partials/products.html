@@ -7,39 +7,38 @@
 			<li ng-repeat="item in categories" ng-include="categoriesMenu"></li>
 		</ul>
 
-			<button type="button" class="btn btn-info btn-xs"
+		<div class="row btnsExpandCollapse">
+			<button type="button" class="btn btn-info btn-xs expandAll"
 			ng-click="expandAll()">Expand All</button>
-
-			<button type="button" class="btn btn-info btn-xs"
+			<button type="button" class="btn btn-info btn-xs collapseAll"
 			ng-click="collapseAll()">Collapse All</button>
+		</div>
 
 		<form id="productsFilter" name="productsFilter" class="form-group">
-
-			  <div class="form-group">
-			    <div class="input-group">
-			      <div class="input-group-addon">from</div>
-			      <input type="text" class="form-control input-sm" id="minCost" value="150">
-			      <div class="input-group-addon">to</div>
-			      <input type="text" class="form-control input-sm" id="maxCost" value="570">
-			      <div class="input-group-addon">$</div>
-			    </div>
-			  </div>
-
+			<div class="form-group">
+				<div class="input-group">
+					<div class="input-group-addon">from</div>
+					<input type="text" class="form-control input-sm" id="minCost" value="150">
+					<div class="input-group-addon">to</div>
+					<input type="text" class="form-control input-sm" id="maxCost" value="570">
+					<div class="input-group-addon">$</div>
+				</div>
+			</div>
 			<div id="rangeSlider"></div>
-
-
 			<div class="criteriaBox" ng-repeat="(key, arrValue) in filterCriteria">
 				<h5>{{key}} <i class="fa fa-filter"></i></h5>
 				<label class="checkbox" ng-repeat="item in arrValue">
 					<input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}
-					<span class="badge">{{ (dataProducts | filter:count(item, key)).length }}</span>
+					<span class="badge">
+						{{ (dataProducts | filter:count(item, key)).length }}
+					</span>
 				</label>
 			</div>
 			<button type="reset" class="btn btn-danger btn-xs"
-			ng-click="filtersReset()">Reset filter</button>
+			ng-click="filtersReset()">
+			<i class="fa fa-refresh"></i> Reset filter</button>
 		</form>
 	</aside>
-
 
 	<section class="col-md-9">
 		<div class="row">

@@ -1756,10 +1756,7 @@ input[type="date"] {
   float: left;
   margin-left: -20px;
 }
-.radio + .radio,
-.checkbox + .checkbox {
-  margin-top: -5px;
-}
+
 .radio-inline,
 .checkbox-inline {
   display: inline-block;
@@ -5084,7 +5081,6 @@ button.close {
   z-index: 1050;
   display: none;
   overflow: auto;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   outline: none;
 }
@@ -5137,7 +5133,7 @@ button.close {
 }
 .modal-header {
   min-height: 16.42857143px;
-  padding: 15px;
+  padding: 10px;
   border-bottom: 1px solid #e5e5e5;
 }
 .modal-header .close {
@@ -5149,10 +5145,10 @@ button.close {
 }
 .modal-body {
   position: relative;
-  padding: 20px;
+  padding: 15px;
 }
 .modal-footer {
-  padding: 19px 20px 20px;
+  padding: 10px;
   margin-top: 15px;
   text-align: right;
   border-top: 1px solid #e5e5e5;
@@ -5182,7 +5178,7 @@ button.close {
 }
 @media (min-width: 992px) {
   .modal-lg {
-    width: 900px;
+    width: 980px;
   }
 }
 .tooltip {

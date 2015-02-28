@@ -8,6 +8,10 @@
                 </a>
                 <a ng-href="#/products/{{val.category}}/{{val.id}}">{{val.name}}</a>
             <span>Price: <b>$ {{val.price}}</b></span>
+            <button type="button"
+            ng-click="addToCart(val.id, val.category, val.price, val.name, val.img)"
+            class="addToCart btn btn-success btn-xs">
+            <i class="fa fa-plus"></i> Add to cart</button>
     		</div>
 		</div>
 	</div>

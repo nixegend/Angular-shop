@@ -77,41 +77,55 @@ header {
 	color: #fff;
 }
 
+#laguages label {
+	border-radius: 0;
+}
+
 /*=================== MENU =======================*/
 
 #productsBasket {
 	height: 50px;
+	cursor: pointer;
 	margin: 0 -15px 0 0;
-	border-bottom: 50px solid #494949;
 	border-left: 50px solid #333;
+	border-bottom: 50px solid #494949;
+	width: 115px;
+	position: relative;
+}
+
+#productsBasket:hover #basket {
+	fill: #fff;
+}
+
+#productsBasket:hover {
+	color: #fff;
 }
 
 #basketSVGicon {
 	display: inline-block;
 	vertical-align: middle;
-	padding: 0 10px;
+	padding: 7px 10px;
+}
+
+.btnDown {
+	position: absolute;
+	left: -3px;
+	top: 28px;
+	font-size: 17px;
+}
+
+.btnDown.empty {
+	color: #333;
+}
+
+.btnDown.full {
+	color: #16a0e5;
 }
 
 #basketSVGicon #basket {
 	fill: #ff4d4d;
 	width: 32px;
 	cursor: pointer;
-}
-
-#basketSVGicon:hover #basket {
-	fill: #fff;
-}
-
-#btnDown {
-	cursor: pointer;
-	font-size: 12px;
-	border-left: 1px solid #5E5E5E;
-	color: #ff4d4d;
-	padding: 19px 10px;
-}
-
-#btnDown:hover {
-	color: #fff;
 }
 
 .dropdown-submenu {
@@ -185,7 +199,7 @@ ul.dropdown-menu li:last-child {
 #navMenu .nav > li > a:focus,
 #navMenu .nav .open > a:hover,
 #navMenu .nav .open > a:focus {
-	background-color: #4A4A4A;
+	background-color: #494949;
 	color: #fff;
 }
 
@@ -197,16 +211,16 @@ ul.dropdown-menu li:last-child {
 }
 
 #categoriesMenu li a {
-	background-color: #fbfbfb;
+	background-color: #fff;
 	color: #16a0e5;
 	display: block;
+	border: 1px solid #DDDDDD;
+	padding: 2px 2px 2px 5px;
 	margin: 2px 0;
-	border: 1px solid #f0f0f0;
-	padding: 3px 2px 3px 5px;
 }
 
 #categoriesMenu li a:hover {
-	background-color: #eee;
+	background-color: #D9F8FF;
 	color: #ff4d4d;
 }
 
@@ -236,7 +250,7 @@ ul.dropdown-menu li:last-child {
 	display: inline-block;
 	content: "";
 	position: absolute;
-	top: 0;
+	top: -2px;
 	bottom: 13px;
 	left: 0;
 	border: 1px dotted #67b2dd;
@@ -247,7 +261,7 @@ ul.dropdown-menu li:last-child {
 	display: inline-block;
 	content: "";
 	position: absolute;
-	top: 14px;
+	top: 13px;
 	left: -13px;
 	width: 13px;
 	height: 0;
@@ -263,10 +277,16 @@ ul.dropdown-menu li:last-child {
 #categoriesMenu li span.head {
 	cursor: pointer;
 	background-color: #333;
-	border-radius: 5px 5px 0 0;
 	color: #fff;
 	display: block;
-	padding: 4px 7px;
+	padding: 2px 7px;
+	margin: 0 0 1px 0;
+	border: 1px solid #ccc;
+	border-radius: 5px 5px 0 0;
+}
+
+.btnsExpandCollapse {
+	margin: 10px 0;
 }
 
 /*=================== categories menu end =======================*/
@@ -337,7 +357,6 @@ ul.productsList {
 
 .productsBox .box,
 .productsList li {
-	background-color: #fbfbfb;
 	border-top: 4px solid #ddd;
 	border-right: 1px solid #ddd;
 	border-bottom: 1px solid #ddd;
@@ -345,6 +364,7 @@ ul.productsList {
 	border-radius: 5px;
 	box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.18);
 	padding: 5px 10px;
+	background-color: #fff;
 }
 
 .productsList li {
@@ -355,7 +375,7 @@ ul.productsList {
 .productsList li:hover {
 	box-shadow: 1px 2px 7px 0 rgba(0, 0, 0, 0.24);
 	border-top: 4px solid #ff4d4d;
-	background-color: #f1fafe;
+	background-color: #D9F8FF;
 }
 
 .productsBox .box {
@@ -369,15 +389,16 @@ ul.productsList {
 	margin: 10px 0;
 	border-radius: 5px;
 	box-shadow: 1px 2px 2px 0 rgba(0, 0, 0, 0.18);
-	background-color: #fbfbfb;
+	background-color: #fff;
 }
 
 .criteriaBox label {
-	padding: 8px 7px 3px 27px;
+	padding: 5px 7px 2px 27px;
 	margin: 0;
 	font-weight: 100;
 	color: #16A0E5;
 	border-bottom: 1px solid #F0F0F0;
+	cursor: pointer;
 }
 
 .criteriaBox label .badge {
@@ -393,7 +414,7 @@ ul.productsList {
 }
 
 .criteriaBox label:hover {
-	background-color: #eee;
+	background-color: #D9F8FF;
 	color: #ff4d4d;
 }
 

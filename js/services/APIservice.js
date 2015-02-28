@@ -10,10 +10,6 @@ define(['app'], function (app) {
         return sortArr;
         }
 
-        this.getDOMelement = function(selector) {
-            return angular.element(document.querySelectorAll(selector));
-        }
-
         this.getJSONresponse = function(file) {
         var def = $q.defer();
             $http.get('/js/json/'+file+'.json').success(function (data, status, headers, config) {

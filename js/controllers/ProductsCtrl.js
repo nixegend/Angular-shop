@@ -26,7 +26,7 @@ define(['app', 'jQueryUI', 'RCMservice', 'APIservice'], function (app) {
 			$scope.filterCriteria = newObj;
 		}
 
-		var sortDescAsc = APIservice.getDOMelement('#sortDescAsc');
+		var sortDescAsc = $('#sortDescAsc');
 
 		$scope.sortChanged = function() {
 			$scope.sortoptions = ['memory', 'model', 'price'];
@@ -149,67 +149,60 @@ define(['app', 'jQueryUI', 'RCMservice', 'APIservice'], function (app) {
     $scope.categoriesMenu = 'partials/categories-menu.html';
 
 
-/* слайдер цен */
+//===================== range slider =========================================
 
-$("#rangeSlider").slider({
-	min: 0,
-	max: 1000,
-	values: [150,570],
-	range: true,
-	stop: function(event, ui) {
-		$("input#minCost").val($("#rangeSlider").slider("values",0));
-		$("input#maxCost").val($("#rangeSlider").slider("values",1));
-
-    },
-    slide: function(event, ui){
-		$("input#minCost").val($("#rangeSlider").slider("values",0));
-		$("input#maxCost").val($("#rangeSlider").slider("values",1));
-    }
-});
-
-$("input#minCost").change(function(){
-
-	var value1 = $("input#minCost").val();
-	var value2 = $("input#maxCost").val();
-
-    if(parseInt(value1) > parseInt(value2)){
-		value1 = value2;
-		$("input#minCost").val(value1);
-	}
-	$("#rangeSlider").slider("values",0,value1);
-});
-
-$("input#maxCost").change(function(){
-
-	var value1 = $("input#minCost").val();
-	var value2 = $("input#maxCost").val();
-
-	if (value2 > 1000) { value2 = 1000; $("input#maxCost").val(1000)}
-
-	if(parseInt(value1) > parseInt(value2)){
-		value2 = value1;
-		$("input#maxCost").val(value2);
-	}
-	$("#rangeSlider").slider("values",1,value2);
-});
-
-
-// фильтрация ввода в поля
-	$('input').keypress(function(event){
-		var key, keyChar;
-		if(!event) var event = window.event;
-
-		if (event.keyCode) key = event.keyCode;
-		else if(event.which) key = event.which;
-
-		if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
-		keyChar=String.fromCharCode(key);
-
-		if(!/\d/.test(keyChar))	return false;
-
+	$("#rangeSlider").slider({
+		min: 0,
+		max: 1000,
+		values: [150,570],
+		range: true,
+		stop: function(event, ui) {
+			$("input#minCost").val($("#rangeSlider").slider("values",0));
+			$("input#maxCost").val($("#rangeSlider").slider("values",1));
+	    },
+	    slide: function(event, ui){
+			$("input#minCost").val($("#rangeSlider").slider("values",0));
+			$("input#maxCost").val($("#rangeSlider").slider("values",1));
+	    }
 	});
 
+	$("input#minCost").change(function(){
+		var value1 = $("input#minCost").val();
+		var value2 = $("input#maxCost").val();
 
+	    if(parseInt(value1) > parseInt(value2)){
+			value1 = value2;
+			$("input#minCost").val(value1);
+		}
+		$("#rangeSlider").slider("values",0,value1);
+	});
+
+	$("input#maxCost").change(function(){
+		var value1 = $("input#minCost").val();
+		var value2 = $("input#maxCost").val();
+
+		if (value2 > 1000) { value2 = 1000; $("input#maxCost").val(1000)}
+
+		if(parseInt(value1) > parseInt(value2)){
+			value2 = value1;
+			$("input#maxCost").val(value2);
+		}
+		$("#rangeSlider").slider("values",1,value2);
+	});
+
+	// filter fields ==========================================
+		$('input').keypress(function(event){
+			var key, keyChar;
+			if(!event) var event = window.event;
+
+			if (event.keyCode) key = event.keyCode;
+			else if(event.which) key = event.which;
+
+			if(key==null || key==0 || key==8 || key==13 || key==9 || key==46 || key==37 || key==39 ) return true;
+			keyChar=String.fromCharCode(key);
+
+			if(!/\d/.test(keyChar))	return false;
+		});
 //==============================================================
 
 
@@ -228,6 +221,19 @@ $("input#maxCost").change(function(){
 			$(this).next('ul').slideDown();
 		});
 	}
+
+//==============================================================
+
+// TODO: in to header controller
+$scope.addToCart = function(id, category, price, name, img) {
+	console.log();
+
+
+$scope.basket = {};
+
+}
+
+
 
 //==============================================================
 
