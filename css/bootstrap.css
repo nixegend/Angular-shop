@@ -2005,8 +2005,7 @@ select[multiple].input-lg {
 .btn.active:focus {
   outline: none;
 }
-.btn:hover,
-.btn:focus {
+.btn:hover {
   color: #333;
   text-decoration: none;
 }
@@ -2156,7 +2155,6 @@ fieldset[disabled] .btn-success.active {
   border-color: #46b8da;
 }
 .btn-info:hover,
-.btn-info:focus,
 .btn-info:active,
 .btn-info.active,
 .open .dropdown-toggle.btn-info {

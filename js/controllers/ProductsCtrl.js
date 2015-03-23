@@ -224,19 +224,6 @@ define(['app', 'jQueryUI', 'RCMservice', 'APIservice'], function (app) {
 
 //==============================================================
 
-// TODO: in to header controller
-$scope.addToCart = function(id, category, price, name, img) {
-	console.log();
-
-
-$scope.basket = {};
-
-}
-
-
-
-//==============================================================
-
 	}]);
 
 
