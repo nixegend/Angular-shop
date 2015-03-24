@@ -44,13 +44,16 @@
 										<td>
 											<div class="input-group input-group-quantity">
 											  <span class="input-group-btn">
-											    <button type="button" class="btn btn-info btn-xs" ng-click="minusQuantity($index)">
+											    <button type="button" class="btn btn-info btn-xs"
+											    ng-click="minusQuantity(product.id)">
 											    	<i class="fa fa-minus"></i>
 											    </button>
 											  </span>
-											  <input type="text" class="form-control" ng-model="product.quantity">
+											  <input type="text" class="form-control"
+											  ng-model="product.quantity">
 											  <span class="input-group-btn">
-											    <button type="button" class="btn btn-info btn-xs" ng-click="plusQuantity($index)">
+											    <button type="button" class="btn btn-info btn-xs"
+											    ng-click="plusQuantity(product.id)">
 											    	<i class="fa fa-plus"></i>
 											    </button>
 											  </span>
@@ -59,7 +62,8 @@
 										<td>$ {{product.price}}</td>
 										<td>$ {{product.quantity * product.price}}</td>
 										<td>
-											<i class="fa fa-trash-o remProduct" ng-click="removeProduct(product.id)"></i>
+											<i class="fa fa-trash-o remProduct"
+											ng-click="removeProduct(product.id)"></i>
 										</td>
 									</tr>
 								</tbody>
