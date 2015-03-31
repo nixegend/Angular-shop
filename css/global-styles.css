@@ -1,7 +1,6 @@
 @import url('bootstrap.css');
 @import url('font-awesome.css');
 @import url('bootstrap-theme.css');
-@import url('jquery-ui.css');
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 @import url(http://fonts.googleapis.com/css?family=Chelsea+Market);
 
@@ -211,12 +210,12 @@ ul.dropdown-menu li:last-child {
 }
 
 #categoriesMenu li a {
-	background-color: #fff;
 	color: #16a0e5;
 	display: block;
-	border: 1px solid #DDDDDD;
-	padding: 2px 2px 2px 5px;
-	margin: 2px 0;
+	padding: 1px 2px 1px 5px;
+	margin: 3px 0;
+	background-color: #FFF;
+	box-shadow: 0 1px 1px 0 #9E9E9E;
 }
 
 #categoriesMenu li a:hover {
@@ -250,10 +249,10 @@ ul.dropdown-menu li:last-child {
 	display: inline-block;
 	content: "";
 	position: absolute;
-	top: -2px;
-	bottom: 13px;
+	top: -3px;
+	bottom: 8px;
 	left: 0;
-	border: 1px dotted #67b2dd;
+	border: 1px dotted #9BA1FF;
 	border-width: 0 0 0 1px;
 }
 
@@ -265,7 +264,7 @@ ul.dropdown-menu li:last-child {
 	left: -13px;
 	width: 13px;
 	height: 0;
-	border-top: 1px dotted #67b2dd;
+	border-top: 1px dotted #9BA1FF;
 }
 
 #categoriesMenu ul,
@@ -277,7 +276,7 @@ ul.dropdown-menu li:last-child {
 #categoriesMenu li span.head {
 	cursor: pointer;
 	background-color: #333;
-	color: #fff;
+	color: #FFF;
 	display: block;
 	padding: 2px 7px;
 	margin: 0 0 1px 0;
@@ -341,6 +340,16 @@ button i,
 	display: table;
 	width: 100%;
 	padding: 0;
+}
+
+/*=======================================================*/
+
+.productsList .addToCart  {
+	float: right;
+}
+
+.productsBox .addToCart  {
+	float: right;
 }
 
 /*=======================================================*/

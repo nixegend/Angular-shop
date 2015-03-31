@@ -7,24 +7,14 @@
 			<li ng-repeat="item in categories" ng-include="categoriesMenu"></li>
 		</ul>
 
-		<div class="row btnsExpandCollapse">
+<!-- 		<div class="row btnsExpandCollapse">
 			<button type="button" class="btn btn-info btn-xs expandAll"
 			ng-click="expandAll()">Expand All</button>
 			<button type="button" class="btn btn-info btn-xs collapseAll"
 			ng-click="collapseAll()">Collapse All</button>
-		</div>
+		</div> -->
 
 		<form id="productsFilter" name="productsFilter" class="form-group">
-			<div class="form-group">
-				<div class="input-group">
-					<div class="input-group-addon">from</div>
-					<input type="text" class="form-control input-sm" id="minCost" value="150">
-					<div class="input-group-addon">to</div>
-					<input type="text" class="form-control input-sm" id="maxCost" value="570">
-					<div class="input-group-addon">$</div>
-				</div>
-			</div>
-			<div id="rangeSlider"></div>
 			<div class="criteriaBox" ng-repeat="(key, arrValue) in filterCriteria">
 				<h5>{{key}} <i class="fa fa-filter"></i></h5>
 				<label class="checkbox" ng-repeat="item in arrValue">

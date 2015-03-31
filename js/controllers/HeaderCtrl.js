@@ -1,7 +1,7 @@
-define(['app', 'directHeader', 'isActiveLink', 'bootstrap', 'RCMservice', 'APIservice'],
+define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'],
     function (app, RCMservice, APIservice) {
-	app.controller('HeaderCtrl', ['$scope', '$rootScope', 'RCMservice', 'APIservice',
-        function ($scope, $rootScope, RCMservice, APIservice) {
+	app.controller('HeaderCtrl', ['$scope', '$rootScope', '$modal', 'RCMservice', 'APIservice',
+        function ($scope, $rootScope, $modal, RCMservice, APIservice) {
 
         $scope.langModel = 'en';
         $scope.navMenu = 'partials/nav-menu.html';
@@ -45,5 +45,18 @@ define(['app', 'directHeader', 'isActiveLink', 'bootstrap', 'RCMservice', 'APIse
             $scope.menu = RCMservice.reConstructor(response);
         });
 
-	}]);
+        $scope.openModal = function(size) {
+          $modal.open({
+            size: size,
+            templateUrl: 'partials/product-basket.html',
+            controller: function($scope) {
+              $scope.closeModal = function(){
+                $scope.$close();
+              }
+            }
+          });
+        };
+
+  }]);
+
 });
