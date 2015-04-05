@@ -1,7 +1,6 @@
 define(['app', 'RCMservice', 'APIservice'], function (app) {
-
-	app.controller('ProductsCtrl', ['$scope', '$http', 'RCMservice', 'APIservice',
-		function ($scope, $http, RCMservice, APIservice) {
+	app.controller('ProductsCtrl', ['$scope', '$http', 'rcm', 'api',
+		function ($scope, $http, rcm, api) {
 //==============================================================
 	   	$scope.productsFilters = function (obj) {
 			var newObj = new Object();
@@ -26,19 +25,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 			$scope.filterCriteria = newObj;
 		};
 
-		function getDomElement(element, all) {
-			if (all && all !== undefined) {
-				return document.querySelectorAll(element);
-			} else {
-				return document.querySelector(element);
-			}
-		};
-
-		function ngElement(element) {
-			return angular.element(element);
-		};
-
-		var sortDescAsc = getDomElement('#sortDescAsc');
+		var sortDescAsc = api.getDomElement('#sortDescAsc');
 
 		$scope.sortChanged = function() {
 			$scope.sortoptions = ['memory', 'model', 'price'];
@@ -50,7 +37,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 			$scope.sortChanged();
 
 		$scope.sortDescAscBtn = function() {
-			ngElement(sortDescAsc).toggleClass('fa-sort-amount-asc fa-sort-amount-desc');
+			api.ngElement(sortDescAsc).toggleClass('fa-sort-amount-asc fa-sort-amount-desc');
 			$scope.reverse = !$scope.reverse;
 		}
 
@@ -154,8 +141,8 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		$scope.boxesInRow = 4;
 //==============================================================
 
-    APIservice.getJSONresponse('categories').then(function (response) {
-       $scope.categories = RCMservice.reConstructor(response);
+    api.getJSONresponse('categories').then(function (response) {
+       $scope.categories = rcm.reConstructor(response);
     });
 
     $scope.categoriesMenu = 'partials/categories-menu.html';

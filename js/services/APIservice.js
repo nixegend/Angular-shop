@@ -1,5 +1,17 @@
 define(['app'], function (app) {
-    app.service('APIservice', ['$http', '$q', function ($http, $q) {
+    app.service('api', ['$http', '$q', function ($http, $q) {
+
+        this.getDomElement = function(element, all) {
+            if (all && all !== undefined) {
+                return document.querySelectorAll(element);
+            } else {
+                return document.querySelector(element);
+            }
+        };
+
+        this.ngElement = function(element) {
+            return angular.element(element);
+        };
 
         this.getSortArr = function(arrId) {
             var sortArr = arrId.sort(function(a, b){return a-b});
@@ -8,7 +20,7 @@ define(['app'], function (app) {
               if (sortArr[j] == sortArr[j-1]) sortArr.splice(j, 1);
             }
         return sortArr;
-        }
+        };
 
         this.getJSONresponse = function(file) {
         var def = $q.defer();
@@ -21,7 +33,7 @@ define(['app'], function (app) {
             });
 
         return def.promise;
-        }
+        };
 
         return this;
     }]);

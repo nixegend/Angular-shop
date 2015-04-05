@@ -1,7 +1,6 @@
-define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'],
-    function (app, RCMservice, APIservice) {
-	app.controller('HeaderCtrl', ['$scope', '$rootScope', '$modal', 'RCMservice', 'APIservice',
-        function ($scope, $rootScope, $modal, RCMservice, APIservice) {
+define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], function (app) {
+	app.controller('HeaderCtrl', ['$scope', '$rootScope', '$modal', 'rcm', 'api',
+        function ($scope, $rootScope, $modal, rcm, api) {
 
         $scope.langModel = 'en';
         $scope.navMenu = 'partials/nav-menu.html';
@@ -41,9 +40,15 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'],
           delete $scope.basket[id];
         };
 
-        APIservice.getJSONresponse('menu').then(function (response) {
-            $scope.menu = RCMservice.reConstructor(response);
+        api.getJSONresponse('menu').then(function (response) {
+            $scope.menu = rcm.reConstructor(response);
         });
+
+        $scope.toggleDropdownMenu = function($event) {
+          $event.preventDefault();
+          $event.stopPropagation();
+          $scope.status.isopenMenu = !$scope.status.isopenMenu;
+        };
 
         $scope.openModal = function(size) {
           $modal.open({

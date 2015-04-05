@@ -1,6 +1,5 @@
 define(['app'], function (app) {
-
-    app.service('RCMservice', [function () {
+    app.service('rcm', [function () {
 
         this.getSortArr = function(arrId) {
             var sortArr = arrId.sort(function(a, b){return a-b});
@@ -46,5 +45,4 @@ define(['app'], function (app) {
         return this;
 
     }]);
-
 });

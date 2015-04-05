@@ -3,8 +3,7 @@
 		<section class="leftSection col-md-8">
 			<div class="navbar-header">
 			    <button type="button" class="navbar-toggle navbarToggleBtn"
-			    data-toggle="collapse"
-			    data-target=".navbar-collapse">
+			    ng-click="toggleDropdownMenu($event)">
 					<i class="fa fa-bars"></i>
 			    </button>
 				<a class="navbar-brand" href="/#/">
@@ -12,13 +11,15 @@
 				</a>
 			</div>
 
-			<div id="productsBasketIcon" class="pull-right" ng-click="openModal('lg')">
-				<i class="fa fa-arrow-circle-down btnDown empty"></i>
-				<i id="basketSVGicon" ng-include="logoBasket"></i>
+			<div id="productsBasketIcon" ng-click="openModal('lg')">
+				<span>
+					<i id="productsInBasket" class="empty">192</i>
+					<i id="basketSVGicon" ng-include="logoBasket"></i>
+				</span>
 			</div>
 
-			<nav id="navMenu" class="collapse navbar-collapse pull-right">
-				<ul class="nav navbar-nav">
+			<nav id="navMenu">
+				<ul class="nav navbar-nav" dropdown is-open="status.isopenMenu">
 				  <li ng-repeat="item in menu" ng-class="{'dropdown': item.subLevel.length > 0}"
 				      ng-include="navMenu">
 				  </li>
@@ -35,9 +36,8 @@
 		      </span>
 		      <input id="siteSearch" type="text" class="form-control"
 		      placeholder="Site search ...">
-		      <div class="input-group-btn" dropdown is-open="status.isopen">
-		        <button type="button" class="btn btn-danger dropdown-toggle"
-		        dropdown-toggle ng-disabled="disabled">
+		      <div class="input-group-btn" dropdown>
+		        <button type="button" class="btn btn-danger dropdown-toggle" dropdown-toggle>
 		        	Administrator <span class="caret"></span>
 		        </button>
 		        <ul class="dropdown-menu dropdown-menu-right">
