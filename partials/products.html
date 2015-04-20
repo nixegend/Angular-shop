@@ -1,18 +1,15 @@
 <div id="productsSerchSort" class="row">
 
 	<aside id="leftAside" class="col-md-3">
-		<h4>Phones</h4>
+
+		<h4 class="headerOfproducts">Phones
+			<span class="expandAll fa fa-plus-square-o" ng-click="expandAll()"></span>
+			<span class="collapseAll fa fa-minus-square-o" ng-click="collapseAll()"></span>
+		</h4>
 
 		<ul id="categoriesMenu">
 			<li ng-repeat="item in categories" ng-include="categoriesMenu"></li>
 		</ul>
-
-<!-- 		<div class="row btnsExpandCollapse">
-			<button type="button" class="btn btn-info btn-xs expandAll"
-			ng-click="expandAll()">Expand All</button>
-			<button type="button" class="btn btn-info btn-xs collapseAll"
-			ng-click="collapseAll()">Collapse All</button>
-		</div> -->
 
 		<form id="productsFilter" name="productsFilter" class="form-group">
 			<div class="criteriaBox" ng-repeat="(key, arrValue) in filterCriteria">

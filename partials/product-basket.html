@@ -51,7 +51,8 @@
     <div class="pull-left">
         Total payment <b>$ {{totalQuantity() | currency:""}}</b>
     </div>
-        <button class="btn btn-primary" type="button">
+
+        <button class="btn btn-primary" type="button" ng-disabled="!totalQuantity()">
             <i class="fa fa-credit-card"></i>
             Checkout
         </button>

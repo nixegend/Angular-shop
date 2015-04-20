@@ -6,6 +6,12 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
         $scope.navMenu = 'partials/nav-menu.html';
         $scope.logoBasket = 'svg/basket.svg';
         $rootScope.siteName = 'Ng-Shop';
+        $scope.isCollapsedMenu = (window.outerWidth == 768) ? true : false;
+
+        angular.element(window).bind('resize', function() {
+          $scope.isCollapsedMenu = (window.outerWidth == 768) ? true : false;
+        });
+
         $scope.basket = {};
 
         $scope.addToCart = function(id, price, name) {
@@ -36,6 +42,14 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
          return total;
         };
 
+        $scope.numberOfproducts = function() {
+          var total = 0;
+         angular.forEach($scope.basket, function(item) {
+            total += item.quantity;
+         });
+         return total;
+        };
+
         $scope.removeProduct = function(id) {
           delete $scope.basket[id];
         };
@@ -43,12 +57,6 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
         api.getJSONresponse('menu').then(function (response) {
             $scope.menu = rcm.reConstructor(response);
         });
-
-        $scope.toggleDropdownMenu = function($event) {
-          $event.preventDefault();
-          $event.stopPropagation();
-          $scope.status.isopenMenu = !$scope.status.isopenMenu;
-        };
 
         $scope.openModal = function(size) {
           $modal.open({

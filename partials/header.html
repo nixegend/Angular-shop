@@ -3,7 +3,7 @@
 		<section class="leftSection col-md-8">
 			<div class="navbar-header">
 			    <button type="button" class="navbar-toggle navbarToggleBtn"
-			    ng-click="toggleDropdownMenu($event)">
+			    ng-click="isCollapsedMenu = !isCollapsedMenu">
 					<i class="fa fa-bars"></i>
 			    </button>
 				<a class="navbar-brand" href="/#/">
@@ -11,17 +11,17 @@
 				</a>
 			</div>
 
-			<div id="productsBasketIcon" ng-click="openModal('lg')">
-				<span>
-					<i id="productsInBasket" class="empty">192</i>
-					<i id="basketSVGicon" ng-include="logoBasket"></i>
-				</span>
-			</div>
-
-			<nav id="navMenu">
-				<ul class="nav navbar-nav" dropdown is-open="status.isopenMenu">
+			<nav id="navMenu" collapse="isCollapsedMenu">
+				<ul class="nav navbar-nav">
 				  <li ng-repeat="item in menu" ng-class="{'dropdown': item.subLevel.length > 0}"
 				      ng-include="navMenu">
+				  </li>
+				  <li id="productsBasketIcon" ng-click="openModal('lg')">
+					<i class="basketSVGicon" ng-include="logoBasket"></i>
+					<span>
+						<i class="productsInBasket" ng-show="numberOfproducts()">{{numberOfproducts()}}</i>
+						<i class="caret"></i>
+					</span>
 				  </li>
 				</ul>
 			</nav>
