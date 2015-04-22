@@ -1,9 +1,10 @@
 define(['app', 'RCMservice', 'APIservice'], function (app) {
-	app.controller('ProductsCtrl', ['$scope', '$http', 'rcm', 'api',
-		function ($scope, $http, rcm, api) {
+	app.controller('ProductsCtrl', ['$scope', '$filter', 'rcm', 'api',
+		function ($scope, $filter, rcm, api) {
+
 //==============================================================
 	   	$scope.productsFilters = function (obj) {
-			var newObj = new Object();
+			var newObj = {};
 			var filterCriteria = ['manufacturer', 'memory'];
 
 			for (var i = 0; i < filterCriteria.length; i++) {
@@ -21,9 +22,9 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 					newObj[filterCriteria[i]] = arrCriteria.sort(function(a, b){return a-b});
 				}
 			}
-
 			$scope.filterCriteria = newObj;
 		};
+//==============================================================
 
 		var sortDescAsc = api.getDomElement('#sortDescAsc');
 
@@ -62,87 +63,90 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		}
 //==============================================================
 
-		$http.get('/js/json/phones.json').success(function (data, status, headers, config){
+		api.getJSONresponse('phones').then(function (data) {
 			$scope.productsFilters(data);
-			$scope.dataProducts = data;
+			$scope.productsData = data;
 
-	  		var criteriaObj = {};
-			$scope.filterProducts = function (param, prop) {
-			  var arrProducts = [];
-
-			  function getProductsObj (scopeArr) {
-				arrProducts = [];
-				return (scopeArr.length == 0) ? data : scopeArr;
-			  }
-
-			  if (criteriaObj.hasOwnProperty(prop)) {
-				var x = criteriaObj[prop].indexOf(param);
-				if (x > -1) {
-				  criteriaObj[prop].splice(x, 1);
-				  if (criteriaObj[prop].length == 0)
-				  delete(criteriaObj[prop]);
-				} else {
-				  criteriaObj[prop].push(param);
-				}
-			  } else {
-				criteriaObj[prop] = [param];
-			  }
-
-			  for (var p in criteriaObj) {
-				getProductsObj(arrProducts).map(function (obj) {
-				  if (criteriaObj[p].indexOf(obj[p]) > -1)
-					arrProducts.push(obj);
-				});
-			  }
-
-			  	if (param === true && prop === true) {
-				  	criteriaObj = {};
-	  				arrProducts = [];
-			  	}
-
-			  var retakeProducts = (arrProducts.length == 0) ? data : arrProducts;
-			  $scope.productsPagenation(retakeProducts);
-			}
+			// $scope.dataProducts = data; //for filter displayProducts
+			//jsfiddle.net/jNYfd/
 
   			$scope.productsPagenation(data);
-
-  			$scope.filtersReset = function() {
-  				$scope.filterProducts(true, true);
-			}
-
-		}).error(function (data, status, headers, config) {
-			console.log(status);
-			alert('can not get phones.json');
-		});
+    	});
 
 //==============================================================
 
+  		var criteriaObj = {};
+		$scope.filterProducts = function(param, prop) {
+		  var arrProducts = [];
+
+		  function getProductsObj(scopeArr) {
+			arrProducts = [];
+			return (scopeArr.length == 0) ? $scope.productsData : scopeArr;
+		  }
+
+		  if (criteriaObj.hasOwnProperty(prop)) {
+			var x = criteriaObj[prop].indexOf(param);
+			if (x > -1) {
+			  criteriaObj[prop].splice(x, 1);
+			  if (criteriaObj[prop].length == 0)
+			  delete(criteriaObj[prop]);
+			} else {
+			  criteriaObj[prop].push(param);
+			}
+		  } else {
+			criteriaObj[prop] = [param];
+		  }
+
+		  for (var p in criteriaObj) {
+			getProductsObj(arrProducts).map(function(obj) {
+			  if (criteriaObj[p].indexOf(obj[p]) > -1)
+				arrProducts.push(obj);
+			});
+		  }
+
+		  	if (param === true && prop === true) {
+			  	criteriaObj = {};
+  				arrProducts = [];
+		  	}
+
+		  var retakeProducts = (arrProducts.length == 0) ? $scope.productsData : arrProducts;
+		  $scope.productsPagenation(retakeProducts);
+		};
+
+
+//==============================================================
+
+		$scope.selectArr = [8, 16, 32, 64, 128, 'All'];
+		$scope.itemsPerPage = 8;
+		$scope.currentPage = 1;
+		$scope.maxSize = 3;
+
 		$scope.productsPagenation = function(obj) {
 
-			$scope.pagerOptions = {
-				selectArr: [8, 16, 32, 64, 128, 'All'],
-				totalItems: obj.length,
-				itemsPerPage: 8,
-				currentPage: 1,
-				maxSize: 3
-			};
+			$scope.totalItems = obj.length;
 
 			$scope.pageChanged = function() {
-			var items = $scope.pagerOptions.itemsPerPage;
+			var items = $scope.itemsPerPage;
 				items = (items == 'All') ? obj.length : +items;
 
-				var begin = (($scope.pagerOptions.currentPage - 1) * items);
+				var begin = (($scope.currentPage - 1) * items);
 				var end = items + begin;
 				$scope.displayProducts = obj.slice(begin, end);
 			}
+
 			$scope.pageChanged();
 		}
+
+    $scope.$watch('searchInList', function () {
+       var obj = $filter('filter')($scope.productsData, $scope.searchInList);
+	if (obj != undefined) $scope.productsPagenation(obj);
+    });
 
 		$scope.boxesInRow = 4;
 //==============================================================
 
-    api.getJSONresponse('categories').then(function (response) {
-       $scope.categories = rcm.reConstructor(response);
+    api.getJSONresponse('categories').then(function (data) {
+       $scope.categories = rcm.reConstructor(data);
     });
 
     $scope.categoriesMenu = 'partials/categories-menu.html';
@@ -170,7 +174,6 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 	}]);
 
-
 	app.filter('rows', function() {
 	    return function(arrLength) {
 	        var numRows = Math.ceil(arrLength);
@@ -181,6 +184,5 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 	        return arrRows;
 	    };
 	});
-
 
 });

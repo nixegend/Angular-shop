@@ -82,6 +82,10 @@ header {
 	border-radius: 0;
 }
 
+.dropdown-menu > li:first-child > a {
+  border-top: 1px solid #ccc;
+}
+
 /*=================== basket cion =======================*/
 
 #productsBasketIcon {
@@ -261,7 +265,7 @@ header {
 	display: inline-block;
 	content: "";
 	position: absolute;
-	top: -3px;
+	top: -5px;
 	bottom: 8px;
 	left: 0;
 	border: 1px dotted #9BA1FF;
@@ -296,29 +300,40 @@ header {
 }
 
 .headerOfproducts {
-  text-transform: capitalize;
   background-color: #333;
   border-radius: 5px 5px 0 0;
   margin: 0;
-  color: #fff;
-  padding: 5px 10px;
+  padding: 0 10px;
   cursor: default;
   border-bottom: 1px solid #D5D0D0;
+  display: table;
+  width: 100%;
+}
+
+.headerOfproducts h4 {
+  text-transform: capitalize;
+  color: #fff;
+  display: inline-block;
+  padding: 0;
+  line-height: 28px;
+  margin: 0;
+  float: left;
 }
 
 .headerOfproducts .expandAll,
 .headerOfproducts .collapseAll {
 	float: right;
-	font-size: 14px;
 	background-color: #08c;
-	padding: 7px;
-	margin: -5px 1px;
 	cursor: pointer;
+	padding: 7px;
+	font-size: 14px;
+	margin: 0 0 0 2px;
 }
 
 .headerOfproducts .expandAll:hover,
 .headerOfproducts .collapseAll:hover {
 	background-color: #ff4d4d;
+	color: #fff;
 }
 
 /*=================== categories menu end =======================*/

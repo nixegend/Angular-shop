@@ -420,8 +420,8 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin-top: 10px;
-  margin-bottom: 10px;
+      margin-bottom: 10px;
+      margin-top: 10px;
 }
 h4 small,
 .h4 small,
@@ -3214,7 +3214,7 @@ input[type="button"].btn-block {
   border-bottom: 1px solid #ccc;
 }
 .dropdown-menu > li > a:hover {
-  color: #262626;
+  color: #FF0D0D;
   text-decoration: none;
   background-color: #f5f5f5;
 }

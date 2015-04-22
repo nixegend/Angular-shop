@@ -1,11 +1,11 @@
 <div id="productsSerchSort" class="row">
 
 	<aside id="leftAside" class="col-md-3">
-
-		<h4 class="headerOfproducts">Phones
+		<div class="headerOfproducts">
+			<h4>Phones</h4>
 			<span class="expandAll fa fa-plus-square-o" ng-click="expandAll()"></span>
 			<span class="collapseAll fa fa-minus-square-o" ng-click="collapseAll()"></span>
-		</h4>
+		</div>
 
 		<ul id="categoriesMenu">
 			<li ng-repeat="item in categories" ng-include="categoriesMenu"></li>
@@ -17,12 +17,12 @@
 				<label class="checkbox" ng-repeat="item in arrValue">
 					<input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}
 					<span class="badge">
-						{{ (dataProducts | filter:count(item, key)).length }}
+						{{ (displayProducts | filter:count(item, key)).length }}
 					</span>
 				</label>
 			</div>
 			<button type="reset" class="btn btn-danger btn-xs"
-			ng-click="filtersReset()">
+			ng-click="filterProducts(true, true)">
 			<i class="fa fa-refresh"></i> Reset filter</button>
 		</form>
 	</aside>
@@ -32,7 +32,8 @@
 			<div class="col-md-4">
 				<div class="input-group input-group-sm">
 					<span class="input-group-addon"><i class="fa fa-search"></i></span>
-						<input type="text" id="serchProducts" ng-model="q" placeholder="Serch product ..." class="form-control input-sm">
+						<input type="text" id="serchProducts" ng-model="searchInList"
+						placeholder="Serch product ..." class="form-control input-sm">
 				</div>
 			</div>
 			<div class="col-md-8">
@@ -73,20 +74,21 @@
 				<div class="input-group input-group-sm">
 					<span class="input-group-addon">Products on page:</span>
 					<select id="productsONpage"
-					ng-options="option for option in pagerOptions.selectArr"
+					ng-options="option for option in selectArr"
 					class="form-control"
-					ng-model="pagerOptions.itemsPerPage"
+					ng-model="itemsPerPage"
 					ng-change="pageChanged()">
 					</select>
 				</div>
 			</div>
+
 			<div id="pager" class="col-md-6">
 				<pagination
-				total-items="pagerOptions.totalItems"
-				ng-model="pagerOptions.currentPage"
-				max-size="pagerOptions.maxSize"
+				total-items="totalItems"
+				ng-model="currentPage"
+				max-size="maxSize"
 				class="pagination-sm"
-				items-per-page="pagerOptions.itemsPerPage"
+				items-per-page="itemsPerPage"
 				boundary-links="true"
 				rotate="false"
 				ng-change="pageChanged()"
@@ -94,7 +96,7 @@
 				</pagination>
 			</div>
 			<div id="pageOFpages" class="col-md-3">
-				<span>Page: {{pagerOptions.currentPage}} / {{numPages}}</span>
+				<span>Page: {{currentPage}} / {{numPages}}</span>
 			</div>
 		</div>
 	</section>

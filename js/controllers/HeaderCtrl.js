@@ -15,7 +15,7 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
         $scope.basket = {};
 
         $scope.addToCart = function(id, price, name) {
-            var j = ($scope.basket.hasOwnProperty(id)) ? $scope.basket[id].quantity : 0;
+            var j = $scope.basket.hasOwnProperty(id) ? $scope.basket[id].quantity : 0;
             $scope.basket[id] = {
                 'id' : id,
                 'name' : name,
@@ -25,9 +25,8 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
         };
 
         $scope.minusQuantity = function(id) {
-            if ($scope.basket[id].quantity > 0) {
-              $scope.basket[id].quantity--;
-            }
+          if ($scope.basket[id].quantity > 1)
+          $scope.basket[id].quantity--;
         };
 
         $scope.plusQuantity = function(id) {
