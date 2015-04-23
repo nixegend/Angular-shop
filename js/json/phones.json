@@ -1,5 +1,15 @@
 [
   {
+    "id" : "0",
+    "name" : "HTC Desire 270",
+    "model" : "Desire 270",
+    "manufacturer" : "HTC",
+    "memory" : 4,
+    "price" : 144,
+    "category" : "phones",
+    "img" : "HTC_Desire_210.jpg"
+  },
+  {
     "id" : "1",
     "name" : "HTC Desire 210",
     "model" : "Desire 210",

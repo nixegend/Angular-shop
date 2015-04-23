@@ -66,10 +66,6 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		api.getJSONresponse('phones').then(function (data) {
 			$scope.productsFilters(data);
 			$scope.productsData = data;
-
-			// $scope.dataProducts = data; //for filter displayProducts
-			//jsfiddle.net/jNYfd/
-
   			$scope.productsPagenation(data);
     	});
 
@@ -109,8 +105,8 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
   				arrProducts = [];
 		  	}
 
-		  var retakeProducts = (arrProducts.length == 0) ? $scope.productsData : arrProducts;
-		  $scope.productsPagenation(retakeProducts);
+		  var p = (arrProducts.length == 0) ? $scope.productsData : arrProducts;
+		  $scope.productsPagenation(p);
 		};
 
 
@@ -123,7 +119,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 		$scope.productsPagenation = function(obj) {
 
-			$scope.totalItems = obj.length;
+			$scope.totalItems = obj;
 
 			$scope.pageChanged = function() {
 			var items = $scope.itemsPerPage;

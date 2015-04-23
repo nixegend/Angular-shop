@@ -17,7 +17,7 @@
 				<label class="checkbox" ng-repeat="item in arrValue">
 					<input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}
 					<span class="badge">
-						{{ (displayProducts | filter:count(item, key)).length }}
+						{{ (totalItems | filter:count(item, key)).length }}
 					</span>
 				</label>
 			</div>
@@ -84,7 +84,7 @@
 
 			<div id="pager" class="col-md-6">
 				<pagination
-				total-items="totalItems"
+				total-items="totalItems.length"
 				ng-model="currentPage"
 				max-size="maxSize"
 				class="pagination-sm"

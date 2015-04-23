@@ -460,10 +460,11 @@ ul.productsList {
 
 .criteriaBox label .badge {
 	float: right;
-	color: #fff;
+	color: #FF0000;
 	min-width: 30px;
 	font-weight: normal;
-	background-color: #C3C3C3;
+	background-color: #E4E4E4;
+	box-shadow: 2px 1px 2px 0 #B3B3B3 inset;
 }
 
 .criteriaBox label:last-child {
