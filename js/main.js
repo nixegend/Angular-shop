@@ -5,6 +5,7 @@ require(['config'], function() {
 		'./controllers/HeaderCtrl',
 		'./controllers/FooterCtrl',
 		'./controllers/ProductDetailCtrl',
+		'./controllers/ProductsCategoryCtrl',
 		'./controllers/ProductsCtrl'
 	], function(angular, app) {
 		app.config(['$routeProvider', function($routeProvider) {
@@ -21,6 +22,10 @@ require(['config'], function() {
 			.when('/products', {
 				templateUrl: 'partials/products.html',
 				controller: 'ProductsCtrl'
+			})
+			.when('/products/:category', {
+				templateUrl: 'partials/products-category.html',
+				controller: 'ProductsCategoryCtrl'
 			})
 			.when('/products/:category/:productId', {
 				templateUrl: 'partials/product-detail.html',

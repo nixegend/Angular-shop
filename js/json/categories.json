@@ -1,21 +1,89 @@
 [
-  {"id" : "1", "name" : "Phones", "path" : "/products/phones", "parentID" : "0"},
-  {"id" : "2", "name" : "NoteBooks", "path" : "/products/notebooks", "parentID" : "0"},
-  {"id" : "3", "name" : "Cameras", "path" : "/products/сameras", "parentID" : "0"},
-
-  {"id" : "4", "name" : "child-product-1", "path" : "/products/child-product-1", "parentID" : "1"},
-  {"id" : "5", "name" : "child-product-2", "path" : "/products/child-product-2", "parentID" : "1"},
-  {"id" : "6", "name" : "child-product-3", "path" : "/products/child-product-3", "parentID" : "1"},
-
-  {"id" : "7", "name" : "child-product-4", "path" : "/products/child-product-4", "parentID" : "2"},
-  {"id" : "8", "name" : "child-product-5", "path" : "/products/child-product-5", "parentID" : "2"},
-  {"id" : "9", "name" : "child-product-6", "path" : "/products/child-product-6", "parentID" : "2"},
-
-  {"id" : "10", "name" : "child-product-7", "path" : "/products/child-product-7", "parentID" : "3"},
-  {"id" : "11", "name" : "child-product-8", "path" : "/products/child-product-8", "parentID" : "3"},
-  {"id" : "12", "name" : "child-product-9", "path" : "/products/child-product-9", "parentID" : "3"},
-
-  {"id" : "13", "name" : "child-product-4", "path" : "/products/child-product-4", "parentID" : "8"},
-  {"id" : "14", "name" : "child-product-5", "path" : "/products/child-product-5", "parentID" : "8"},
-  {"id" : "15", "name" : "child-product-6", "path" : "/products/child-product-6", "parentID" : "8"}
+  {
+    "id" : "1",
+    "name" : "Photo and Video",
+    "path" : "/products/photo-and-video",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "2",
+    "name" : "MP3 and Audio",
+    "path" : "/products/mp3-and-audio",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "3",
+    "name" : "Phones",
+    "path" : "/products/phones",
+    "filters" : ["Manufacturer", "Memory", "Core numbers", "Color"],
+    "sortBy" : ["memory", "model", "price"],
+    "parentID" : "0"
+  },
+  {
+    "id" : "4",
+    "name" : "NoteBooks",
+    "path" : "/products/notebooks",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "5",
+    "name" : "Clipboards",
+    "path" : "/products/clipboards",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "6",
+    "name" : "TV",
+    "path" : "/products/tv",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "7",
+    "name" : "Cameras",
+    "path" : "/products/cameras",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "8",
+    "name" : "Camcorders",
+    "path" : "/products/camcorders",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "9",
+    "name" : "Monitors",
+    "path" : "/products/monitors",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "10",
+    "name" : "Headphones",
+    "path" : "/products/headphones",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "2"},
+  {
+    "id" : "11",
+    "name" : "MP3",
+    "path" : "/products/mp3-players",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "2"
+  }
 ]
