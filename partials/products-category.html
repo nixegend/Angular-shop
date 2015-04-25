@@ -39,12 +39,11 @@
 			<div class="col-md-8">
 				<div id="selectSortBy" class="input-group input-group-sm">
 					<span class="input-group-addon">Sort by:</span>
-					  	<select
-					  	class="form-control"
-					  	ng-model="sortCriteria"
-					  	ng-options="sortoption for sortoption in sortoptions"
-					  	ng-change="sortChanged()">
-						</select>
+				  	<select
+				  	class="form-control"
+				  	ng-model="sortCriteria"
+				  	ng-options="sortoption for sortoption in sortOptions">
+					</select>
 					<span id="btnSort" ng-click="sortDescAscBtn()" class="input-group-addon btn-info">
 						<i id="sortDescAsc" class="fa fa-sort-amount-asc"></i>
 					</span>

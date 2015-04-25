@@ -1,22 +1,18 @@
 define(['app', 'RCMservice', 'APIservice'], function (app) {
-	app.controller('ProductsCategoryCtrl', ['$scope', '$filter', '$routeParams', 'rcm', 'api',
-		function ($scope, $filter, $routeParams, rcm, api) {
+	app.controller('ProductsCategoryCtrl', ['$scope', '$filter', '$routeParams', '$location', 'rcm', 'api',
+		function ($scope, $filter, $routeParams, $location, rcm, api) {
+
+		$scope.layouts = ['partials/layout-list.html', 'partials/layout-box.html'];
+		$scope.categoriesMenu = 'partials/categories-menu.html';
+		$scope.selectArr = [8, 16, 32, 64, 128, 'All'];
+		$scope.itemsPerPage = 8;
+		$scope.currentPage = 1;
+		$scope.boxesInRow = 4;
+		$scope.maxSize = 3;
 
 //==============================================================
-
-    api.getJSONresponse('categories').then(function (data) {
-       $scope.categories = rcm.reConstructor(data);
-    console.log($scope.categories);
-    });
-
-    $scope.categoriesMenu = 'partials/categories-menu.html';
-
-
-//==============================================================
-	   	$scope.productsFilters = function (obj) {
+	   	function productsFilters(obj, filterCriteria) {
 			var newObj = {};
-			var filterCriteria = ['Manufacturer', 'Memory', 'Core numbers', 'Color'];
-
 			for (var i = 0; i < filterCriteria.length; i++) {
 				var arrCriteria = obj.map(function (m) {
 						for (var p in m) {
@@ -34,36 +30,30 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 			}
 			$scope.filterCriteria = newObj;
 		};
+
+//==============================================================
+    api.getJSONresponse('categories').then(function (data) {
+		var categoryObj = $filter('filter')(data, {path : $location.path()})[0];
+      	$scope.categories = rcm.reConstructor(data);
+		$scope.criteria = categoryObj.filters;
+		$scope.sortCriteria = categoryObj.sortBy[0];
+		$scope.sortOptions = categoryObj.sortBy;
+    });
+
 //==============================================================
 
-		var sortDescAsc = api.getDomElement('#sortDescAsc');
-
-		$scope.sortChanged = function() {
-			$scope.sortoptions = ['memory', 'model', 'price'];
-		var predicateSort = ($scope.sortCriteria == undefined) ? $scope.sortoptions[0] : $scope.sortCriteria;
-			$scope.predicate = predicateSort;
-			$scope.sortCriteria = predicateSort;
-		}
-
-			$scope.sortChanged();
-
-		$scope.sortDescAscBtn = function() {
-			api.ngElement(sortDescAsc).toggleClass('fa-sort-amount-asc fa-sort-amount-desc');
+		($scope.sortDescAscBtn = function() {
+			api.ngElement(api.getDomElement('#sortDescAsc')).
+			toggleClass('fa-sort-amount-asc fa-sort-amount-desc');
 			$scope.reverse = !$scope.reverse;
-		}
+		})();
 
-			$scope.sortDescAscBtn();
-  			$scope.layouts = ['partials/layout-list.html', 'partials/layout-box.html'];
-
-		$scope.boxListLayout = function(layout) {
+		($scope.boxListLayout = function(layout) {
   			$scope.layout = (layout == 'list') ? $scope.layouts[0] : $scope.layouts[1];
-
   			$scope.radioModel = layout;
 			$scope.box = !$scope.box;
 			$scope.list = !$scope.list;
-		}
-
-  			$scope.boxListLayout('list');
+		})('list');
 
 //==============================================================
 		$scope.count = function (value, prop) {
@@ -74,7 +64,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 //==============================================================
 
 		api.getJSONresponse($routeParams.category).then(function (data) {
-			$scope.productsFilters(data);
+			productsFilters(data, $scope.criteria);
 			$scope.productsData = data;
   			$scope.productsPagenation(data);
     	});
@@ -119,28 +109,18 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		  $scope.productsPagenation(p);
 		};
 
-
 //==============================================================
 
-		$scope.selectArr = [8, 16, 32, 64, 128, 'All'];
-		$scope.itemsPerPage = 8;
-		$scope.currentPage = 1;
-		$scope.maxSize = 3;
-
 		$scope.productsPagenation = function(obj) {
-
 			$scope.totalItems = obj;
-
-			$scope.pageChanged = function() {
+			($scope.pageChanged = function() {
 			var items = $scope.itemsPerPage;
 				items = (items == 'All') ? obj.length : +items;
 
 				var begin = (($scope.currentPage - 1) * items);
 				var end = items + begin;
 				$scope.displayProducts = obj.slice(begin, end);
-			}
-
-			$scope.pageChanged();
+			})();
 		}
 
     $scope.$watch('searchInList', function () {
@@ -148,11 +128,8 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 	if (obj != undefined) $scope.productsPagenation(obj);
     });
 
-		$scope.boxesInRow = 4;
-
 //==============================================================
 
-// todo : use nativ script and angular
 	$scope.toggleShowHideMenu = function (event) {
 		// $(event.target).next('ul').slideToggle()
 	}
