@@ -2,7 +2,7 @@
   {{item.name}}
 </a>
 
-<span class="head" ng-click="toggleShowHideMenu($event)" ng-if="item.subLevel.length > 0">
+<span class="head" ng-click="toggleShowHideMenu($event.target)" ng-if="item.subLevel.length > 0">
   <i class="fa fa-minus"></i> {{item.name}} <i class="fa fa-level-down"></i>
 </span>
 

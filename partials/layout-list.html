@@ -1,6 +1,6 @@
 <ul class="productsList">
 	<li ng-animate="'animate'"
-		ng-repeat="(key, val) in displayProducts | orderBy:sortCriteria:reverse">
+		ng-repeat="(key, val) in displayProducts">
             <a ng-href="#/products/{{val.category}}/{{val.id}}" class="thumb" title="{{val.name}}">
                 <img ng-src="img/products/{{val.category}}/{{val.img}}" alt="{{val.name}}">
             </a>

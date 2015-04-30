@@ -19,7 +19,7 @@
     "id" : "3",
     "name" : "Phones",
     "path" : "/products/phones",
-    "filters" : ["Manufacturer", "Memory", "Core numbers", "Color"],
+    "filters" : ["manufacturer", "memory", "core-numbers", "color"],
     "sortBy" : ["memory", "model", "price"],
     "parentID" : "0"
   },

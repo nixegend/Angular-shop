@@ -264,7 +264,9 @@ header {
 #categoriesMenu li ul {
 	position: relative;
 	padding: 0 0 0 15px;
+	overflow: hidden;
 }
+
 
 #categoriesMenu li ul:before {
 	display: inline-block;
@@ -281,7 +283,7 @@ header {
 	display: inline-block;
 	content: "";
 	position: absolute;
-	top: 13px;
+	top: 16px;
 	left: -13px;
 	width: 13px;
 	height: 0;
@@ -300,7 +302,7 @@ header {
 	color: #000;
 	display: block;
 	padding: 2px 7px;
-	margin: 5px 0 5px 0;
+	margin: 5px 0 0 0;
 	border-radius: 5px 5px 0 0;
 }
 
@@ -586,6 +588,8 @@ footer p span {
 
 /*=======================================================*/
 
+#productsFilter .ng-enter,
+#productsFilter .ng-leave,
 #products .ng-enter,
 #products .ng-leave {
 	-webkit-transition: 250ms linear all;
@@ -597,6 +601,8 @@ footer p span {
 	display: block;
 }
 
+#productsFilter .ng-leave,
+#productsFilter .ng-enter.ng-enter-active,
 #products .ng-leave,
 #products .ng-enter.ng-enter-active {
 	opacity: 1;
@@ -604,6 +610,8 @@ footer p span {
 	height: 100px;
 }
 
+#productsFilter .ng-enter,
+#productsFilter .ng-leave.ng-leave-active,
 #products .ng-enter,
 #products .ng-leave.ng-leave-active {
 	opacity: 0;

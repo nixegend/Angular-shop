@@ -12,7 +12,7 @@
 		</ul>
 
 		<form id="productsFilter" name="productsFilter" class="form-group">
-			<div class="criteriaBox" ng-repeat="(key, arrValue) in filterCriteria">
+			<div class="criteriaBox" ng-animate="'animate'" ng-repeat="(key, arrValue) in filterCriteria">
 				<h5>{{key}} <i class="fa fa-filter"></i></h5>
 				<label class="checkbox" ng-repeat="item in arrValue">
 					<input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}

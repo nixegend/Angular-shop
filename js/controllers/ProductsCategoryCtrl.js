@@ -2,7 +2,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 	app.controller('ProductsCategoryCtrl', ['$scope', '$filter', '$routeParams', '$location', 'rcm', 'api',
 		function ($scope, $filter, $routeParams, $location, rcm, api) {
 
-		$scope.layouts = ['partials/layout-list.html', 'partials/layout-box.html'];
+
 		$scope.categoriesMenu = 'partials/categories-menu.html';
 		$scope.selectArr = [8, 16, 32, 64, 128, 'All'];
 		$scope.itemsPerPage = 8;
@@ -22,11 +22,10 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 						return arr.indexOf(m) == idx;
 					});
 
-				if(isNaN(arrCriteria[0])){
+				if(isNaN(arrCriteria[0]))
 					newObj[filterCriteria[i]] = arrCriteria.sort();
-				} else {
+				else
 					newObj[filterCriteria[i]] = arrCriteria.sort(function(a, b){return a-b});
-				}
 			}
 			$scope.filterCriteria = newObj;
 		};
@@ -42,14 +41,18 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 //==============================================================
 
-		($scope.sortDescAscBtn = function() {
+		$scope.sortDescAscBtn = function() {
 			api.ngElement(api.getDomElement('#sortDescAsc')).
 			toggleClass('fa-sort-amount-asc fa-sort-amount-desc');
 			$scope.reverse = !$scope.reverse;
-		})();
+			$scope.$watch('sortCriteria', function () {
+		     var obj = $filter('orderBy')($scope.totalItems, $scope.sortCriteria, $scope.reverse);
+	 			$scope.productsPagenation(obj);
+		    });
+		};
 
 		($scope.boxListLayout = function(layout) {
-  			$scope.layout = (layout == 'list') ? $scope.layouts[0] : $scope.layouts[1];
+  			$scope.layout = (layout == 'list') ? 'partials/layout-list.html' : 'partials/layout-box.html';
   			$scope.radioModel = layout;
 			$scope.box = !$scope.box;
 			$scope.list = !$scope.list;
@@ -111,17 +114,16 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 //==============================================================
 
-		$scope.productsPagenation = function(obj) {
-			$scope.totalItems = obj;
-			($scope.pageChanged = function() {
-			var items = $scope.itemsPerPage;
-				items = (items == 'All') ? obj.length : +items;
-
-				var begin = (($scope.currentPage - 1) * items);
-				var end = items + begin;
-				$scope.displayProducts = obj.slice(begin, end);
-			})();
-		}
+	$scope.productsPagenation = function(obj) {
+		$scope.totalItems = obj;
+		($scope.pageChanged = function() {
+		var items = $scope.itemsPerPage;
+			items = (items == 'All') ? obj.length : +items;
+			var begin = (($scope.currentPage - 1) * items);
+			var end = items + begin;
+			$scope.displayProducts = obj.slice(begin, end);
+		})();
+	}
 
     $scope.$watch('searchInList', function () {
        var obj = $filter('filter')($scope.productsData, $scope.searchInList);
@@ -130,21 +132,40 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 //==============================================================
 
-	$scope.toggleShowHideMenu = function (event) {
-		// $(event.target).next('ul').slideToggle()
-	}
+	function slideUpAll(elem) {
+		var ul = api.ngElement(elem);
+		ul.children().removeClass('fa-minus').addClass('fa-plus');
+		ul.next()[0].style.display = 'none';
+	};
+
+	function slideDownAll(elem) {
+	var ul = api.ngElement(elem);
+		ul.next()[0].style.display = 'block';
+		ul.children().removeClass('fa-plus').addClass('fa-minus');
+	};
+
+	$scope.toggleShowHideMenu = function (elem) {
+	var ul = api.ngElement(elem);
+		ul.children().toggleClass('fa-minus fa-plus');
+		if(ul.next()[0].clientHeight)
+			slideUpAll(elem);
+		else
+			slideDownAll(elem);
+	};
 
 	$scope.collapseAll = function() {
-		// $('#categoriesMenu span.head').each(function() {
-		// 	$(this).next('ul').slideUp();
-		// });
-	}
+		var span = api.getDomElement('#categoriesMenu span.head', true);
+		for (var i = 0; i < span.length; i++) {
+			slideUpAll(span[i]);
+		}
+	};
 
 	$scope.expandAll = function() {
-		// $('#categoriesMenu span.head').each(function() {
-		// 	$(this).next('ul').slideDown();
-		// });
-	}
+		var span = api.getDomElement('#categoriesMenu span.head', true);
+		for (var i = 0; i < span.length; i++) {
+			slideDownAll(span[i]);
+		}
+	};
 
 //==============================================================
 
