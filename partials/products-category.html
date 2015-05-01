@@ -12,12 +12,12 @@
 		</ul>
 
 		<form id="productsFilter" name="productsFilter" class="form-group">
-			<div class="criteriaBox" ng-animate="'animate'" ng-repeat="(key, arrValue) in filterCriteria">
-				<h5>{{key}} <i class="fa fa-filter"></i></h5>
-				<label class="checkbox" ng-repeat="item in arrValue">
-					<input type="checkbox" ng-click="filterProducts(item, key)"> {{item}}
+			<div class="criteriaBox" ng-animate="'animate'"	ng-repeat="val in filterCriteria">
+				<h5>{{val.name}} <i class="fa fa-filter"></i></h5>
+				<label class="checkbox" ng-repeat="item in val[val.machineName]">
+					<input type="checkbox" ng-click="filterProducts(item, val.machineName)"> {{item}}
 					<span class="badge">
-						{{ (totalItems | filter:count(item, key)).length }}
+						{{ (totalItems | filter:count(item, val.machineName)).length }}
 					</span>
 				</label>
 			</div>
@@ -42,7 +42,7 @@
 				  	<select
 				  	class="form-control"
 				  	ng-model="sortCriteria"
-				  	ng-options="sortoption for sortoption in sortOptions">
+				  	ng-options="option.machineName as option.name for option in sortOptions">
 					</select>
 					<span id="btnSort" ng-click="sortDescAscBtn()" class="input-group-addon btn-info">
 						<i id="sortDescAsc" class="fa fa-sort-amount-asc"></i>

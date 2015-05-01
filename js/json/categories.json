@@ -19,8 +19,17 @@
     "id" : "3",
     "name" : "Phones",
     "path" : "/products/phones",
-    "filters" : ["manufacturer", "memory", "core-numbers", "color"],
-    "sortBy" : ["memory", "model", "price"],
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "core-numbers", "name" : "Core numbers"},
+      {"machineName" : "color", "name" : "Color"}
+    ],
+    "sortBy" : [
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
     "parentID" : "0"
   },
   {

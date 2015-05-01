@@ -9,6 +9,8 @@
             <button type="button"
             ng-click="addToCart(val.id, val.price, val.name)"
             class="addToCart btn btn-success btn-xs">
-            <i class="fa fa-plus"></i> Add to cart</button>
+            <i class="fa fa-plus"></i> Add to cart
+            <b ng-show="basket[val.id].quantity" class="badge">{{basket[val.id].quantity}}</b>
+            </button>
 	</li>
 </ul>

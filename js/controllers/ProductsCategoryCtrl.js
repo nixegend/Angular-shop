@@ -2,9 +2,8 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 	app.controller('ProductsCategoryCtrl', ['$scope', '$filter', '$routeParams', '$location', 'rcm', 'api',
 		function ($scope, $filter, $routeParams, $location, rcm, api) {
 
-
 		$scope.categoriesMenu = 'partials/categories-menu.html';
-		$scope.selectArr = [8, 16, 32, 64, 128, 'All'];
+		$scope.selectArr = [8, 16, 32, 64, 128];
 		$scope.itemsPerPage = 8;
 		$scope.currentPage = 1;
 		$scope.boxesInRow = 4;
@@ -12,22 +11,20 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 //==============================================================
 	   	function productsFilters(obj, filterCriteria) {
-			var newObj = {};
 			for (var i = 0; i < filterCriteria.length; i++) {
 				var arrCriteria = obj.map(function (m) {
 						for (var p in m) {
-							return m[filterCriteria[i]];
+							return m[filterCriteria[i].machineName];
 						}
 					}).filter(function (m, idx, arr) {
 						return arr.indexOf(m) == idx;
 					});
 
-				if(isNaN(arrCriteria[0]))
-					newObj[filterCriteria[i]] = arrCriteria.sort();
-				else
-					newObj[filterCriteria[i]] = arrCriteria.sort(function(a, b){return a-b});
+				filterCriteria[i][filterCriteria[i].machineName] = (isNaN(arrCriteria[0]))
+					? arrCriteria.sort()
+					: arrCriteria.sort(function(a, b){return a-b});
 			}
-			$scope.filterCriteria = newObj;
+			$scope.filterCriteria = filterCriteria;
 		};
 
 //==============================================================
@@ -35,7 +32,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		var categoryObj = $filter('filter')(data, {path : $location.path()})[0];
       	$scope.categories = rcm.reConstructor(data);
 		$scope.criteria = categoryObj.filters;
-		$scope.sortCriteria = categoryObj.sortBy[0];
+		$scope.sortCriteria = categoryObj.sortBy[0].machineName;
 		$scope.sortOptions = categoryObj.sortBy;
     });
 
@@ -105,7 +102,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
 		  	if (param === true && prop === true) {
 			  	criteriaObj = {};
-  				arrProducts = [];
+					arrProducts = [];
 		  	}
 
 		  var p = (arrProducts.length == 0) ? $scope.productsData : arrProducts;
@@ -117,8 +114,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 	$scope.productsPagenation = function(obj) {
 		$scope.totalItems = obj;
 		($scope.pageChanged = function() {
-		var items = $scope.itemsPerPage;
-			items = (items == 'All') ? obj.length : +items;
+			var items = +$scope.itemsPerPage;
 			var begin = (($scope.currentPage - 1) * items);
 			var end = items + begin;
 			$scope.displayProducts = obj.slice(begin, end);

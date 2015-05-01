@@ -2142,8 +2142,10 @@ fieldset[disabled] .btn-success.active {
   border-color: #4cae4c;
 }
 .btn-success .badge {
-  color: #5cb85c;
+  color: #1B1B1B;
   background-color: #fff;
+  box-shadow: inset 1px 1px 3px 0 #DBDBDB;
+  margin: 0 0 0 5px;
 }
 .btn-info {
   color: #fff;
