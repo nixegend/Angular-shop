@@ -1,0 +1,98 @@
+[
+  {
+    "id" : "1",
+    "name" : "Photo and Video",
+    "path" : "/products/photo-and-video",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "2",
+    "name" : "MP3 and Audio",
+    "path" : "/products/mp3-and-audio",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "3",
+    "name" : "Phones",
+    "path" : "/products/phones",
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "core-numbers", "name" : "Core numbers"},
+      {"machineName" : "color", "name" : "Color"}
+    ],
+    "sortBy" : [
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
+    "parentID" : "0"
+  },
+  {
+    "id" : "4",
+    "name" : "NoteBooks",
+    "path" : "/products/notebooks",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "5",
+    "name" : "Clipboards",
+    "path" : "/products/clipboards",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "0"
+  },
+  {
+    "id" : "6",
+    "name" : "TV",
+    "path" : "/products/tv",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "7",
+    "name" : "Cameras",
+    "path" : "/products/cameras",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "8",
+    "name" : "Camcorders",
+    "path" : "/products/camcorders",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "9",
+    "name" : "Monitors",
+    "path" : "/products/monitors",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "1"
+  },
+  {
+    "id" : "10",
+    "name" : "Headphones",
+    "path" : "/products/headphones",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "2"},
+  {
+    "id" : "11",
+    "name" : "MP3",
+    "path" : "/products/mp3-players",
+    "filters" : [],
+    "sortBy" : [],
+    "parentID" : "2"
+  }
+]

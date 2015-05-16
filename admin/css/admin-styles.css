@@ -1,0 +1,51 @@
+@import url('../../common/css/bootstrap.css');
+@import url('../../common/css/font-awesome.css');
+@import url('../../common/css/bootstrap-theme.css');
+@import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
+@import url(http://fonts.googleapis.com/css?family=Chelsea+Market);
+
+html {
+  height: 100%;
+}
+
+body {
+    height: 100%;
+    background-color: #fff;
+}
+
+#side-menu {
+    bottom: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    position: fixed;
+    top: 51px;
+    left: 225px;
+    width: 225px;
+    margin-left: -225px;
+    border: none;
+    border-radius: 0;
+    background-color: #222;
+}
+
+#wrapper {
+    height: 100%;
+    padding-left: 0;
+}
+
+#page-wrapper {
+    width: 100%;
+    padding: 65px 10px 10px 235px;
+    background-color: #fff;
+}
+
+.top-nav>li {
+    display: inline-block;
+    float: left;
+}
+
+.top-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    line-height: 20px;
+    color: #999;
+}

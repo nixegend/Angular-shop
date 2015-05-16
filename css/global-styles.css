@@ -1,6 +1,6 @@
-@import url('bootstrap.css');
-@import url('font-awesome.css');
-@import url('bootstrap-theme.css');
+@import url('../common/css/bootstrap.css');
+@import url('../common/css/font-awesome.css');
+@import url('../common/css/bootstrap-theme.css');
 @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light);
 @import url(http://fonts.googleapis.com/css?family=Chelsea+Market);
 

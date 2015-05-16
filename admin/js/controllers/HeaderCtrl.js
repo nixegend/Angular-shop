@@ -4,7 +4,7 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
 
         $scope.langModel = 'en';
         $scope.navMenu = 'partials/nav-menu.html';
-        $scope.logoBasket = 'common/svg/basket.svg';
+        $scope.logoBasket = 'svg/basket.svg';
         $rootScope.siteName = 'Ng-Shop';
         $scope.isCollapsedMenu = (window.outerWidth == 768) ? true : false;
 
