@@ -1,0 +1,50 @@
+[
+  {
+    "id" : "mp3-0",
+    "name" : "Apple iPod nano 6 8Gb",
+    "model" : "iPod nano",
+    "manufacturer" : "Apple",
+    "memory" : 8,
+    "price" : 144,
+    "color" : "Blue",
+    "opening-times" : 24,
+    "category" : "mp3",
+    "img" : "Apple_iPod_nano_6_8Gb.jpg"
+  },
+    {
+    "id" : "mp3-1",
+    "name" : "Apple iPod touch 5 32Gb",
+    "model" : "iPod touch",
+    "manufacturer" : "Apple",
+    "memory" : 32,
+    "price" : 234,
+    "color" : "White",
+    "opening-times" : 40,
+    "category" : "mp3",
+    "img" : "Apple_iPod_touch_5_32Gb.jpg"
+  },
+    {
+    "id" : "mp3-2",
+    "name" : "Apple iPod shuffle 5 2Gb",
+    "model" : "iPod shuffle",
+    "manufacturer" : "Apple",
+    "memory" : 2,
+    "price" : 99,
+    "color" : "Green",
+    "opening-times" : 15,
+    "category" : "mp3",
+    "img" : "Apple_iPod_shuffle_5_2Gb.jpg"
+  },
+    {
+    "id" : "mp3-3",
+    "name" : "Sony NWZ-B183F",
+    "model" : "NWZ-B183F",
+    "manufacturer" : "Sony",
+    "memory" : 4,
+    "price" : 159,
+    "color" : "Blue",
+    "opening-times" : 20,
+    "category" : "mp3",
+    "img" : "Sony_NWZ-B183F.jpg"
+  }
+]

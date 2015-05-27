@@ -13,9 +13,6 @@ require(['config'], function() {
 			.when('/', {
 				templateUrl: 'partials/home-page.html'
 			})
-			.when('/about', {
-				templateUrl: 'partials/about.html'
-			})
 			.when('/contacts', {
 				templateUrl: 'partials/contacts.html'
 			})

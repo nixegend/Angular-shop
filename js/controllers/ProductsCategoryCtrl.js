@@ -34,6 +34,7 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		$scope.criteria = categoryObj.filters;
 		$scope.sortCriteria = categoryObj.sortBy[0].machineName;
 		$scope.sortOptions = categoryObj.sortBy;
+		$scope.categoryName = categoryObj.name;
     });
 
 //==============================================================

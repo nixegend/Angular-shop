@@ -1,0 +1,67 @@
+[
+  {
+    "id" : "cameras-0",
+    "name" : "Nikon Coolpix L830",
+    "model" : "Coolpix L830",
+    "manufacturer" : "Nikon",
+    "digital-zoom" : 4,
+    "matrix-type" : "CMOS",
+    "price" : 175,
+    "number-of-pixels" : 16,
+    "optical-zoom" : 30,
+    "category" : "cameras",
+    "img" : "Nikon_Coolpix_L830.jpg"
+  },
+    {
+    "id" : "cameras-1",
+    "name" : "Nikon Coolpix P530",
+    "model" : "Coolpix P530",
+    "manufacturer" : "Nikon",
+    "digital-zoom" : 4,
+    "matrix-type" : "CMOS",
+    "price" : 190,
+    "number-of-pixels" : 16,
+    "optical-zoom" : 42,
+    "category" : "cameras",
+    "img" : "Nikon_Coolpix_P530.jpg"
+  },
+    {
+    "id" : "cameras-2",
+    "name" : "Sony Cyber-shot DSC-H400",
+    "model" : "Cyber-shot DSC-H400",
+    "manufacturer" : "Sony",
+    "digital-zoom" : 4,
+    "matrix-type" : "CMOS",
+    "price" : 150,
+    "number-of-pixels" : 20,
+    "optical-zoom" : 63,
+    "category" : "cameras",
+    "img" : "Sony_Cyber-shot_DSC-H400.jpg"
+  },
+    {
+    "id" : "cameras-3",
+    "name" : "Sony Cyber-shot DSC-HX400",
+    "model" : "Cyber-shot DSC-HX400",
+    "manufacturer" : "Sony",
+    "digital-zoom" : 4,
+    "matrix-type" : "CMOS",
+    "price" : 275,
+    "number-of-pixels" : 20,
+    "optical-zoom" : 50,
+    "category" : "cameras",
+    "img" : "Sony_Cyber-shot_DSC-HX400.jpg"
+  },
+    {
+    "id" : "cameras-4",
+    "name" : "Sony Alpha A3500 Kit 18-50",
+    "model" : "Alpha A3500",
+    "manufacturer" : "Sony",
+    "digital-zoom" : 4,
+    "matrix-type" : "CMOS",
+    "price" : 205,
+    "number-of-pixels" : 20,
+    "optical-zoom" : 32,
+    "category" : "cameras",
+    "img" : "Sony_Alpha_A3500.jpg"
+  }
+]

@@ -1,6 +1,8 @@
 [
   {
     "id" : "1",
+    "img" : "photo-and-video.jpg",
+    "category" : "photo-and-video",
     "name" : "Photo and Video",
     "path" : "/products/photo-and-video",
     "filters" : [],
@@ -9,6 +11,8 @@
   },
   {
     "id" : "2",
+    "img" : "mp3-and-audio.jpg",
+    "category" : "mp3-and-audio",
     "name" : "MP3 and Audio",
     "path" : "/products/mp3-and-audio",
     "filters" : [],
@@ -17,6 +21,8 @@
   },
   {
     "id" : "3",
+    "img" : "iPhone_6.jpg",
+    "category" : "phones",
     "name" : "Phones",
     "path" : "/products/phones",
     "filters" : [
@@ -34,65 +40,110 @@
   },
   {
     "id" : "4",
-    "name" : "NoteBooks",
-    "path" : "/products/notebooks",
-    "filters" : [],
-    "sortBy" : [],
+    "img" : "Apple_iPad_mini.jpg",
+    "category" : "cablets",
+    "name" : "Tablets",
+    "path" : "/products/tablets",
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "core-numbers", "name" : "Core numbers"},
+      {"machineName" : "display-resolution", "name" : "Display resolution"}
+    ],
+    "sortBy" : [
+      {"machineName" : "diagonal", "name" : "Diagonal"},
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
     "parentID" : "0"
   },
   {
     "id" : "5",
-    "name" : "Clipboards",
-    "path" : "/products/clipboards",
-    "filters" : [],
-    "sortBy" : [],
-    "parentID" : "0"
+    "img" : "Philips_40PFT4009.jpg",
+    "category" : "tv",
+    "name" : "TV",
+    "path" : "/products/tv",
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "volume", "name" : "Volume"},
+      {"machineName" : "power-consumption", "name" : "Power consumption"}
+    ],
+    "sortBy" : [
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
+    "parentID" : "1"
   },
   {
     "id" : "6",
-    "name" : "TV",
-    "path" : "/products/tv",
-    "filters" : [],
-    "sortBy" : [],
+    "img" : "Nikon_Coolpix_P530.jpg",
+    "category" : "cameras",
+    "name" : "Cameras",
+    "path" : "/products/cameras",
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "number-of-pixels", "name" : "Number of pixels"},
+      {"machineName" : "optical-zoom", "name" : "Optical zoom"}
+    ],
+    "sortBy" : [
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
     "parentID" : "1"
   },
   {
     "id" : "7",
-    "name" : "Cameras",
-    "path" : "/products/cameras",
-    "filters" : [],
-    "sortBy" : [],
+    "img" : "Dell_S2340L.jpg",
+    "category" : "monitors",
+    "name" : "Monitors",
+    "path" : "/products/monitors",
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "diagonal", "name" : "Diagonal"},
+      {"machineName" : "reaction-time", "name" : "Reaction time"}
+    ],
+    "sortBy" : [
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
     "parentID" : "1"
   },
   {
     "id" : "8",
-    "name" : "Camcorders",
-    "path" : "/products/camcorders",
-    "filters" : [],
-    "sortBy" : [],
-    "parentID" : "1"
+    "img" : "Razer_Kraken_Pro.jpg",
+    "category" : "headphones",
+    "name" : "Headphones",
+    "path" : "/products/headphones",
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "sensitivity", "name" : "Sensitivity"},
+      {"machineName" : "play-rate", "name" : "Play Rate"}
+    ],
+    "sortBy" : [
+      {"machineName" : "impedance", "name" : "Impedance"},
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
+    "parentID" : "2"
   },
   {
     "id" : "9",
-    "name" : "Monitors",
-    "path" : "/products/monitors",
-    "filters" : [],
-    "sortBy" : [],
-    "parentID" : "1"
-  },
-  {
-    "id" : "10",
-    "name" : "Headphones",
-    "path" : "/products/headphones",
-    "filters" : [],
-    "sortBy" : [],
-    "parentID" : "2"},
-  {
-    "id" : "11",
+    "img" : "Apple_iPod_nano_6_8Gb.jpg",
+    "category" : "mp3-players",
     "name" : "MP3",
     "path" : "/products/mp3-players",
-    "filters" : [],
-    "sortBy" : [],
+    "filters" : [
+      {"machineName" : "manufacturer", "name" : "Manufacturer"},
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "opening-times", "name" : "Opening times"},
+      {"machineName" : "color", "name" : "Color"}
+    ],
+    "sortBy" : [
+      {"machineName" : "memory", "name" : "Memory"},
+      {"machineName" : "model",  "name" : "Model"},
+      {"machineName" : "price", "name" : "Price"}
+    ],
     "parentID" : "2"
   }
 ]

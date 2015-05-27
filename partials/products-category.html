@@ -29,14 +29,14 @@
 
 	<section class="col-md-9">
 		<div class="sortBy row">
-			<div class="col-md-4">
+			<div class="sortByRow col-md-4">
 				<div class="input-group input-group-sm">
 					<span class="input-group-addon"><i class="fa fa-search"></i></span>
 						<input type="text" id="serchProducts" ng-model="searchInList"
 						placeholder="Serch product ..." class="form-control input-sm">
 				</div>
 			</div>
-			<div class="col-md-8">
+			<div class="sortByRow col-md-8">
 				<div id="selectSortBy" class="input-group input-group-sm">
 					<span class="input-group-addon">Sort by:</span>
 				  	<select
@@ -62,7 +62,7 @@
 						<i class="fa fa-th-list"></i>
 					</label>
 				</div>
-					<h3 class="numsProducts">Phones <b class="badge">{{productsData.length}}</b></h3>
+					<h3 class="numsProducts">{{categoryName}} <b class="badge">{{productsData.length}}</b></h3>
 			</div>
 		</div>
 

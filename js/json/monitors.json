@@ -1,0 +1,67 @@
+[
+  {
+    "id" : "monitors-0",
+    "name" : "Dell P2414H",
+    "model" : "P2414H",
+    "manufacturer" : "Dell",
+    "diagonal" : 23.8,
+    "display-resolution" : "1920x1080",
+    "price" : 279,
+    "contrast-ratio" : 1000,
+    "reaction-time" : 8,
+    "category" : "monitors",
+    "img" : "Dell_P2414H.jpg"
+  },
+    {
+    "id" : "monitors-1",
+    "name" : "Dell S2340L",
+    "model" : "S2340L",
+    "manufacturer" : "Dell",
+    "diagonal" : 23,
+    "display-resolution" : "1920x1080",
+    "price" : 205,
+    "contrast-ratio" : 1000,
+    "reaction-time" : 7,
+    "category" : "monitors",
+    "img" : "Dell_S2340L.jpg"
+  },
+    {
+    "id" : "monitors-2",
+    "name" : "Dell U2415",
+    "model" : "U2415",
+    "manufacturer" : "Dell",
+    "diagonal" : 24.1,
+    "display-resolution" : "1920x1200",
+    "price" : 420,
+    "contrast-ratio" : 1000,
+    "reaction-time" : 6,
+    "category" : "monitors",
+    "img" : "Dell_U2415.jpg"
+  },
+    {
+    "id" : "monitors-3",
+    "name" : "Samsung SyncMaster S27D590CS",
+    "model" : "SyncMaster S27D590CS",
+    "manufacturer" : "Samsung",
+    "diagonal" : 27,
+    "display-resolution" : "1920x1080",
+    "price" : 445,
+    "contrast-ratio" : 3000,
+    "reaction-time" : 4,
+    "category" : "monitors",
+    "img" : "Samsung_SyncMaster_S27D590CS.jpg"
+  },
+    {
+    "id" : "monitors-4",
+    "name" : "Samsung SyncMaster S24D590PL",
+    "model" : "SyncMaster S24D590PL",
+    "manufacturer" : "Samsung",
+    "diagonal" : 23.6,
+    "display-resolution" : "1920x1080",
+    "price" : 190,
+    "contrast-ratio" : 1000,
+    "reaction-time" : 5,
+    "category" : "monitors",
+    "img" : "Samsung_SyncMaster_S24D590PL.jpg"
+  }
+]

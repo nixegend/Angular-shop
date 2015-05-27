@@ -1,6 +1,6 @@
 define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], function (app) {
-	app.controller('HeaderCtrl', ['$scope', '$rootScope', '$modal', 'rcm', 'api',
-        function ($scope, $rootScope, $modal, rcm, api) {
+	app.controller('HeaderCtrl', ['$scope', '$location', '$window', '$rootScope', '$modal', 'rcm', 'api',
+        function ($scope, $location, $window, $rootScope, $modal, rcm, api) {
 
         $scope.langModel = 'en';
         $scope.navMenu = 'partials/nav-menu.html';
@@ -57,14 +57,71 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
             $scope.menu = rcm.reConstructor(response);
         });
 
-        $scope.openModal = function(size) {
+        $scope.userInfo = function() {
+          var authorizedUser = $window.sessionStorage.authorizedUser,
+              userObj = {};
+
+          if (authorizedUser == undefined) {
+            userObj.name = '';
+            userObj.email = '';
+            userObj.state = false;
+          } else {
+            userObj.name = authorizedUser.split('/')[1];
+            userObj.email = authorizedUser.split('/')[0];
+            userObj.state = true;
+          }
+
+          return userObj;
+        };
+
+        $scope.logOut = function() {
+          delete $window.sessionStorage['authorizedUser'];
+          $location.path('/');
+        };
+
+        $scope.openProductsBasketModal = function(size) {
           $modal.open({
             size: size,
             templateUrl: 'partials/product-basket.html',
             controller: function($scope) {
-              $scope.closeModal = function(){
+              $scope.closeModal = function() {
                 $scope.$close();
               }
+            }
+          });
+        };
+
+        $scope.openLoginFormModal = function(size) {
+          $modal.open({
+            size: size,
+            templateUrl: 'partials/login-form.html',
+            controller: function($scope, $timeout, $filter, $window, $http, $location) {
+              $scope.closeModal = function() {
+                $scope.$close();
+              };
+
+              $scope.logIn = function(userEmail, userPassword) {
+                $http.get('/js/json/users.json').success(function (data) {
+
+                  var userObj = $filter('filter')(data, {email : userEmail, password : userPassword})[0];
+
+                  if (angular.isObject(userObj)) {
+                      $window.sessionStorage.authorizedUser = userObj.email +'/'+ userObj.name;
+                      window.location.href = window.location.origin+'/admin/';
+                  } else {
+                      $scope.wrongCredentials = true;
+                      $timeout(function () {
+                          $scope.wrongCredentials = false;
+                      }, 3700);
+                  }
+
+                }).error(function (data) {
+                  alert('Can not get users.json');
+                  console.log(data);
+                });
+
+              };
+
             }
           });
         };

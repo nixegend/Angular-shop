@@ -16,7 +16,7 @@
 				  <li ng-repeat="item in menu" ng-class="{'dropdown': item.subLevel.length > 0}"
 				      ng-include="navMenu">
 				  </li>
-				  <li id="productsBasketIcon" ng-click="openModal('lg')">
+				  <li id="productsBasketIcon" ng-click="openProductsBasketModal('lg')">
 					<i class="basketSVGicon" ng-include="logoBasket"></i>
 					<span>
 						<i class="productsInBasket" ng-show="numberOfproducts()">{{numberOfproducts()}}</i>
@@ -38,9 +38,9 @@
 		      placeholder="Site search ...">
 		      <div class="input-group-btn" dropdown>
 		        <button type="button" class="btn btn-danger dropdown-toggle" dropdown-toggle>
-		        	Administrator <span class="caret"></span>
+		        	{{userInfo().name}} <span class="caret"></span>
 		        </button>
-		        <ul class="dropdown-menu dropdown-menu-right">
+		        <ul class="dropdown-menu dropdown-menu-right" ng-switch="userInfo().state">
 		        <li>
 					<div id="laguages" class="btn-group btn-group-xs btn-group-justified">
 						<label class="btn btn-info"
@@ -49,8 +49,14 @@
 						ng-model="langModel" btn-radio="'en'">EN</label>
 					</div>
 		        </li>
-				    <li><a href="#"><i class="glyphicon glyphicon-cog"></i> Preferences</a></li>
-				    <li><a href="#"><i class="fa fa-power-off"></i> Logout</a></li>
+
+			    <li ng-click="logOut()" ng-switch-when="true">
+			    	<a name="logout"><i class="fa fa-sign-out"></i> Log Out</a>
+			    </li>
+			    <li ng-click="openLoginFormModal('sm')" ng-switch-default>
+			    	<a name="login"><i class="fa fa-sign-in"></i> Log In</a>
+			    </li>
+
 		        </ul>
 		      </div>
 			</div>

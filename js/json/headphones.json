@@ -1,0 +1,50 @@
+[
+  {
+    "id" : "headphones-0",
+    "name" : "Sony MDR-ZX310",
+    "model" : "MDR-ZX310",
+    "manufacturer" : "Sony",
+    "price" : 58,
+    "impedance" : 24,
+    "play-rate" : "10-24000",
+    "sensitivity" : 98,
+    "category" : "headphones",
+    "img" : "Sony_MDR-ZX310.jpg"
+  },
+    {
+    "id" : "headphones-1",
+    "name" : "Razer Kraken Pro",
+    "model" : "Kraken Pro",
+    "manufacturer" : "Razer",
+    "price" : 140,
+    "impedance" : 32,
+    "play-rate" : "20-20000",
+    "sensitivity" : 110,
+    "category" : "headphones",
+    "img" : "Razer_Kraken_Pro.jpg"
+  },
+    {
+    "id" : "headphones-2",
+    "name" : "Koss Porta Pro",
+    "model" : "Porta Pro",
+    "manufacturer" : "Koss",
+    "price" : 65,
+    "impedance" : 60,
+    "play-rate" : "15-25000",
+    "sensitivity" : 101,
+    "category" : "headphones",
+    "img" : "Koss_Porta_Pro.jpg"
+  },
+    {
+    "id" : "headphones-3",
+    "name" : "Koss UR20",
+    "model" : "UR20",
+    "manufacturer" : "Koss",
+    "price" : 45,
+    "impedance" : 32,
+    "play-rate" : "30-20000",
+    "sensitivity" : 97,
+    "category" : "headphones",
+    "img" : "Koss_UR20.jpg"
+  }
+]

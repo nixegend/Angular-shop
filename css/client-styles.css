@@ -343,6 +343,10 @@ header {
 	color: #fff;
 }
 
+.sortBy .sortByRow {
+	margin: 0 0 10px 0;
+}
+
 /*=================== categories menu end =======================*/
 
 button i,
@@ -393,12 +397,6 @@ button i,
 	width: 70px;
 }
 
-#products {
-	display: table;
-	width: 100%;
-	padding: 0;
-}
-
 /*=======================================================*/
 
 .productsList .addToCart  {
@@ -435,6 +433,7 @@ ul.productsList {
 
 .productsList li {
 	list-style-type: none;
+	min-height: 130px;
 }
 
 .productsBox .box:hover,
@@ -445,7 +444,7 @@ ul.productsList {
 }
 
 .productsBox .box {
-	min-height: 150px;
+	min-height: 180px;
 }
 
 /*=======================================================*/
@@ -584,6 +583,27 @@ footer p span {
 
 .remProduct:hover {
 	color: #FF0000;
+}
+
+/*==================== Login form ==========================*/
+
+#loginForm {
+	overflow: hidden;
+	padding: 15px 15px 10px 10px;
+}
+
+#loginForm .input-group-addon {
+ width: 40px;
+}
+
+#loginForm .input-group {
+ width: 100%;
+}
+
+#loginForm .close {
+  position: absolute;
+  right: -4px;
+  top: -4px;
 }
 
 /*=======================================================*/

@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+  <a class="navbar-brand" href="#">USER</a>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a ng-href="#/">home</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<h2>home page</h2>
+
+<div class="row">
+    <form name="myForm" class="col-md-4" ng-submit="logIn(email, password)">
+        <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" ng-model="email" required>
+        </div>
+        <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" ng-model="password">
+        </div>
+        <div class="checkbox">
+            <label><input type="checkbox"> Remember me</label>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-disabled="!password">Login</button>
+    </form>
+</div>

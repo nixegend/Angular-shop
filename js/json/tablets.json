@@ -1,0 +1,72 @@
+[
+  {
+    "id" : "tablets-0",
+    "name" : "ASUS Google Nexus 7 (2013) 32Gb",
+    "model" : "Google Nexus 7",
+    "manufacturer" : "ASUS",
+    "os" : "Android 4.0",
+    "memory" : 32,
+    "diagonal" : 7,
+    "display-resolution" : "1920x1200",
+    "price" : 199,
+    "core-numbers" : 4,
+    "category" : "tablets",
+    "img" : "ASUS_Google_Nexus_7.jpg"
+  },
+    {
+    "id" : "tablets-1",
+    "name" : "ASUS MeMo Pad HD 7 ME173X 16Gb",
+    "model" : "MeMo Pad HD 7",
+    "manufacturer" : "ASUS",
+    "os" : "Android 4.0",
+    "memory" : 16,
+    "diagonal" : 7,
+    "display-resolution" : "1280x800",
+    "price" : 114,
+    "core-numbers" : 4,
+    "category" : "tablets",
+    "img" : "ASUS_MeMo_Pad_HD_7.jpg"
+  },
+    {
+    "id" : "tablets-2",
+    "name" : "Samsung Galaxy Tab 4 SM-T231 8Gb",
+    "model" : "Galaxy Tab 4 SM-T231",
+    "manufacturer" : "Samsung",
+    "os" : "Android 4.4",
+    "memory" : 8,
+    "diagonal" : 7,
+    "display-resolution" : "1280x800",
+    "price" : 199,
+    "core-numbers" : 4,
+    "category" : "tablets",
+    "img" : "Samsung_Galaxy_Tab_4_SM-T231.jpg"
+  },
+    {
+    "id" : "tablets-3",
+    "name" : "Apple iPad mini (Retina display) 16Gb",
+    "model" : "iPad mini",
+    "manufacturer" : "Apple",
+    "os" : "iOS",
+    "memory" : 16,
+    "diagonal" : 7.9,
+    "display-resolution" : "2048x1536",
+    "price" : 335,
+    "core-numbers" : 2,
+    "category" : "tablets",
+    "img" : "Apple_iPad_mini.jpg"
+  },
+    {
+    "id" : "tablets-4",
+    "name" : "Samsung Galaxy Tab 4 SM-T531 16Gb",
+    "model" : "Galaxy Tab 4 SM-T531",
+    "manufacturer" : "Samsung",
+    "os" : "Android 4.4",
+    "memory" : 16,
+    "diagonal" : 10.1,
+    "display-resolution" : "1280x800",
+    "price" : 289,
+    "core-numbers" : 4,
+    "category" : "tablets",
+    "img" : "Samsung_Galaxy_Tab_4_SM-T531.jpg"
+  }
+]

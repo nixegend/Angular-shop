@@ -1,0 +1,38 @@
+[
+  {
+    "id" : "tv-0",
+    "name" : "Samsung UE 40H6400",
+    "model" : "UE 40H6400",
+    "manufacturer" : "Samsung",
+    "volume" : 20,
+    "price" : 540,
+    "display" : "LCD",
+    "power-consumption" : 117,
+    "category" : "tv",
+    "img" : "Samsung_UE_40H6400.jpg"
+  },
+    {
+    "id" : "tv-1",
+    "name" : "LG 32LB563V",
+    "model" : "32LB563V",
+    "manufacturer" : "LG",
+    "volume" : 20,
+    "price" : 340,
+    "display" : "LCD",
+    "power-consumption" : 135,
+    "category" : "tv",
+    "img" : "LG_32LB563V.jpg"
+  },
+    {
+    "id" : "tv-2",
+    "name" : "Philips 40PFT4009",
+    "model" : "40PFT4009",
+    "manufacturer" : "Philips",
+    "volume" : 10,
+    "price" : 430,
+    "display" : "LCD",
+    "power-consumption" : 110,
+    "category" : "tv",
+    "img" : "Philips_40PFT4009.jpg"
+  }
+]

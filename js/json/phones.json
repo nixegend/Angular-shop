@@ -1,6 +1,6 @@
 [
   {
-    "id" : "0",
+    "id" : "phones-0",
     "name" : "HTC Desire 270",
     "model" : "Desire 270",
     "manufacturer" : "HTC",
@@ -12,7 +12,7 @@
     "img" : "HTC_Desire_210.jpg"
   },
   {
-    "id" : "1",
+    "id" : "phones-1",
     "name" : "HTC Desire 210",
     "model" : "Desire 210",
     "manufacturer" : "HTC",
@@ -24,7 +24,7 @@
     "img" : "HTC_Desire_210.jpg"
   },
   {
-    "id" : "2",
+    "id" : "phones-2",
     "name" : "HTC Desire 616",
     "model" : "Desire 616",
     "manufacturer" : "HTC",
@@ -36,7 +36,7 @@
     "img" : "HTC_Desire_616.jpg"
   },
   {
-    "id" : "3",
+    "id" : "phones-3",
     "name" : "HTC One",
     "model" : "One",
     "manufacturer" : "HTC",
@@ -48,7 +48,7 @@
     "img" : "HTC_One.jpg"
   },
   {
-    "id" : "4",
+    "id" : "phones-4",
     "name" : "HTC One M8",
     "model" : "One M8",
     "manufacturer" : "HTC",
@@ -60,7 +60,7 @@
     "img" : "HTC_One_M8.jpg"
   },
   {
-    "id" : "5",
+    "id" : "phones-5",
     "name" : "iPhone 4S",
     "model" : "4S",
     "manufacturer" : "Apple",
@@ -72,7 +72,7 @@
     "img" : "iPhone_4S.jpg"
   },
   {
-    "id" : "6",
+    "id" : "phones-6",
     "name" : "iPhone 5",
     "model" : "5",
     "manufacturer" : "Apple",
@@ -84,7 +84,7 @@
     "img" : "iPhone_5.jpg"
   },
   {
-    "id" : "7",
+    "id" : "phones-7",
     "name" : "iPhone 5S",
     "model" : "5S",
     "manufacturer" : "Apple",
@@ -96,7 +96,7 @@
     "img" : "iPhone_5S.jpg"
   },
   {
-    "id" : "8",
+    "id" : "phones-8",
     "name" : "iPhone 6",
     "model" : "6",
     "manufacturer" : "Apple",
@@ -108,7 +108,7 @@
     "img" : "iPhone_6.jpg"
   },
   {
-    "id" : "9",
+    "id" : "phones-9",
     "name" : "Lenovo P780",
     "model" : "P780",
     "manufacturer" : "Lenovo",
@@ -120,7 +120,7 @@
     "img" : "Lenovo_P780.jpg"
   },
   {
-    "id" : "10",
+    "id" : "phones-10",
     "name" : "Lenovo S660",
     "model" : "S660",
     "manufacturer" : "Lenovo",
@@ -132,7 +132,7 @@
     "img" : "Lenovo_S660.jpg"
   },
   {
-    "id" : "11",
+    "id" : "phones-11",
     "name" : "Lenovo S820",
     "model" : "S820",
     "manufacturer" : "Lenovo",
@@ -144,7 +144,7 @@
     "img" : "Lenovo_S820.jpg"
   },
   {
-    "id" : "12",
+    "id" : "phones-12",
     "name" : "Lenovo S860",
     "model" : "S860",
     "manufacturer" : "Lenovo",
@@ -156,7 +156,7 @@
     "img" : "Lenovo_S860.jpg"
   },
   {
-    "id" : "13",
+    "id" : "phones-13",
     "name" : "LG D724 G3",
     "model" : "D724 G3",
     "manufacturer" : "LG",
@@ -168,7 +168,7 @@
     "img" : "LG_D724_G3.jpg"
   },
   {
-    "id" : "14",
+    "id" : "phones-14",
     "name" : "LG L60 X145",
     "model" : "L60 X145",
     "manufacturer" : "LG",
@@ -180,7 +180,7 @@
     "img" : "LG_L60_X145.jpg"
   },
   {
-    "id" : "15",
+    "id" : "phones-15",
     "name" : "LG L90 D405",
     "model" : "L90 D405",
     "manufacturer" : "LG",
@@ -192,7 +192,7 @@
     "img" : "LG_L90_D405.jpg"
   },
   {
-    "id" : "16",
+    "id" : "phones-16",
     "name" : "Nokia 530 Lumia",
     "model" : "530 Lumia",
     "manufacturer" : "Nokia",
@@ -204,7 +204,7 @@
     "img" : "Nokia_530_Lumia.jpg"
   },
   {
-    "id" : "17",
+    "id" : "phones-17",
     "name" : "Nokia 630 Lumia",
     "model" : "630 Lumia",
     "manufacturer" : "Nokia",
@@ -216,7 +216,7 @@
     "img" : "Nokia_630_Lumia.jpg"
   },
   {
-    "id" : "18",
+    "id" : "phones-18",
     "name" : "Nokia X",
     "model" : "X",
     "manufacturer" : "Nokia",
@@ -228,7 +228,7 @@
     "img" : "Nokia_X.jpg"
   },
   {
-    "id" : "19",
+    "id" : "phones-19",
     "name" : "Sony Xperia Z1",
     "model" : "Xperia Z1",
     "manufacturer" : "Sony",
@@ -240,7 +240,7 @@
     "img" : "Sony_Xperia_Z1.jpg"
   },
   {
-    "id" : "20",
+    "id" : "phones-20",
     "name" : "Sony Xperia Z2",
     "model" : "Xperia Z2",
     "manufacturer" : "Sony",
@@ -252,7 +252,7 @@
     "img" : "Sony_Xperia_Z2.jpg"
   },
   {
-    "id" : "21",
+    "id" : "phones-21",
     "name" : "Samsung GT-i8552 Galaxy Win",
     "model" : "GT-i8552 Galaxy Win",
     "manufacturer" : "Samsung",
@@ -264,7 +264,7 @@
     "img" : "Samsung_GT-i8552_Galaxy_Win.jpg"
   },
   {
-    "id" : "22",
+    "id" : "phones-22",
     "name" : "Samsung GT-i9500 Galaxy S4",
     "model" : "GT-i9500 Galaxy S4",
     "manufacturer" : "Samsung",
@@ -276,7 +276,7 @@
     "img" : "Samsung_GT-i9500_Galaxy_S4.jpg"
   },
   {
-    "id" : "23",
+    "id" : "phones-23",
     "name" : "Samsung SM-G7102 Galaxy Grand2",
     "model" : "SM-G7102 Galaxy Grand2",
     "manufacturer" : "Samsung",
@@ -288,7 +288,7 @@
     "img" : "Samsung_SM-G7102_Galaxy_Grand2.jpg"
   },
   {
-    "id" : "24",
+    "id" : "phones-24",
     "name" : "iPhone 4S",
     "model" : "4S",
     "manufacturer" : "Apple",
@@ -300,7 +300,7 @@
     "img" : "iPhone_4S.jpg"
   },
   {
-    "id" : "25",
+    "id" : "phones-25",
     "name" : "iPhone 4S",
     "model" : "4S",
     "manufacturer" : "Apple",
@@ -312,7 +312,7 @@
     "img" : "iPhone_4S.jpg"
   },
   {
-    "id" : "26",
+    "id" : "phones-26",
     "name" : "iPhone 5",
     "model" : "5",
     "manufacturer" : "Apple",
@@ -324,7 +324,7 @@
     "img" : "iPhone_5.jpg"
   },
   {
-    "id" : "27",
+    "id" : "phones-27",
     "name" : "iPhone 5S",
     "model" : "5S",
     "manufacturer" : "Apple",
@@ -336,7 +336,7 @@
     "img" : "iPhone_5S.jpg"
   },
   {
-    "id" : "28",
+    "id" : "phones-28",
     "name" : "iPhone 5S",
     "model" : "5S",
     "manufacturer" : "Apple",
@@ -348,7 +348,7 @@
     "img" : "iPhone_5S.jpg"
   },
   {
-    "id" : "29",
+    "id" : "phones-29",
     "name" : "iPhone 6",
     "model" : "6",
     "manufacturer" : "Apple",
@@ -360,7 +360,7 @@
     "img" : "iPhone_6.jpg"
   },
   {
-    "id" : "30",
+    "id" : "phones-30",
     "name" : "iPhone 6",
     "model" : "6",
     "manufacturer" : "Apple",
