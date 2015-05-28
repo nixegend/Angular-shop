@@ -1,7 +1,7 @@
 [
   {
     "id" : "1",
-    "img" : "photo-and-video.jpg",
+    "img" : "photo-and-video.png",
     "category" : "photo-and-video",
     "name" : "Photo and Video",
     "path" : "/products/photo-and-video",
@@ -11,7 +11,7 @@
   },
   {
     "id" : "2",
-    "img" : "mp3-and-audio.jpg",
+    "img" : "mp3-and-audio.png",
     "category" : "mp3-and-audio",
     "name" : "MP3 and Audio",
     "path" : "/products/mp3-and-audio",
@@ -21,7 +21,7 @@
   },
   {
     "id" : "3",
-    "img" : "iPhone_6.jpg",
+    "img" : "iphone6.png",
     "category" : "phones",
     "name" : "Phones",
     "path" : "/products/phones",
@@ -40,8 +40,8 @@
   },
   {
     "id" : "4",
-    "img" : "Apple_iPad_mini.jpg",
-    "category" : "cablets",
+    "img" : "memo-pad.png",
+    "category" : "tablets",
     "name" : "Tablets",
     "path" : "/products/tablets",
     "filters" : [

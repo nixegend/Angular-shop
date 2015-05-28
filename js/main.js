@@ -20,6 +20,42 @@ require(['config'], function() {
 				templateUrl: 'partials/products.html',
 				controller: 'ProductsCtrl'
 			})
+
+
+
+/*
+
+			.when('/login', {
+			    templateUrl: 'views/login.html',
+			    controller: 'LoginCtrl'
+			})
+			.when('/dashboard', {
+			    templateUrl: 'views/dashboard.html',
+			    controller: 'DashboardCtrl',
+			    resolve: {
+			      user: function(SessionService) {
+			        return SessionService.getCurrentUser();
+			      }
+			    }
+			})
+
+app.factory("SessionService", function($q){
+    return {
+        getCurrentUser: function(){
+            return $q.when("Hello World!");
+        }
+    };
+});
+
+app.controller("DashboardCtrl", function (user) {
+    $scope.user = user;
+});
+
+odetocode.com/blogs/scott/archive/2014/05/20/using-resolve-in-angularjs-routes.aspx
+
+*/
+
+
 			.when('/products/:category', {
 				templateUrl: 'partials/products-category.html',
 				controller: 'ProductsCategoryCtrl'
