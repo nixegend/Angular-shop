@@ -1,0 +1,16 @@
+<ul class="productsList">
+	<li ng-animate="'animate'"
+		ng-repeat="(key, val) in displayProducts">
+            <a ng-href="#/products/{{val.category}}/{{val.id}}" class="thumb" title="{{val.name}}">
+                <img ng-src="/user/img/products/{{val.category}}/{{val.img}}" alt="{{val.name}}">
+            </a>
+            <a ng-href="#/products/{{val.category}}/{{val.id}}">{{val.name}}</a>
+		      <span>Price: <b>$ {{val.price}}</b></span>
+            <button type="button"
+            ng-click="addToCart(val.id, val.price, val.name)"
+            class="addToCart btn btn-success btn-xs">
+            <i class="fa fa-plus"></i> Add to cart
+            <b ng-show="basket[val.id].quantity" class="badge">{{basket[val.id].quantity}}</b>
+            </button>
+	</li>
+</ul>

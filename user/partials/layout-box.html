@@ -1,0 +1,31 @@
+<div class="productsBox">
+    <div class="row" ng-animate="'animate'"
+       ng-repeat="row in (displayProducts.length/boxesInRow | rows)">
+        <div class="col-md-3 col-sm-6" ng-repeat="(key, val) in displayProducts.slice(boxesInRow*$index, boxesInRow*$index + boxesInRow)">
+            <div class="box row">
+
+                <div class="col-md-12">
+                    <a ng-href="#/products/{{val.category}}/{{val.id}}" class="thumb" title="{{val.name}}">
+                        <img ng-src="/user/img/products/{{val.category}}/{{val.img}}" alt="{{val.name}}">
+                    </a>
+                </div>
+
+                <div class="col-md-12">
+                    <a ng-href="#/products/{{val.category}}/{{val.id}}">{{val.name}}</a>
+                    <br>
+                    <span>Price: <b>$ {{val.price}}</b></span>
+                </div>
+
+                <div class="col-md-12">
+                    <button type="button"
+                    ng-click="addToCart(val.id, val.price, val.name)"
+                    class="addToCart btn btn-success btn-xs">
+                    <i class="fa fa-plus"></i> Add to cart
+                    <b ng-show="basket[val.id].quantity" class="badge">{{basket[val.id].quantity}}</b>
+                    </button>
+                </div>
+
+    		</div>
+		</div>
+	</div>
+</div>

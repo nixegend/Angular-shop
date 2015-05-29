@@ -1,0 +1,31 @@
+<div id="products" class="container">
+
+  <div class="row" ng-repeat="row in (productCategories.length/boxesInRow | rows)">
+    <div class="col-md-6"
+    ng-repeat="(key, val) in productCategories.slice(boxesInRow*$index, boxesInRow*$index + boxesInRow)">
+      <div class="well">
+        <div class="row">
+
+          <div class="col-md-4">
+            <img ng-src="/user/img/products/{{val.category}}/{{val.img}}" alt="{{val.name}}">
+          </div>
+
+          <div class="col-md-8">
+
+            <h4 class="titleCategory" ng-switch="issetSubLevel"
+            ng-init="issetSubLevel = !val.subLevel.length > 0">
+              <a ng-href="#{{val.path}}" ng-switch-when="true">{{val.name}}</a>
+              <span ng-switch-default>{{val.name}}</span>
+            </h4>
+
+            <ul id="categoryTreeBox">
+              <li ng-repeat="item in val.subLevel" ng-include="categoryTreeBox"></li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
