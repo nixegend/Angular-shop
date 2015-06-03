@@ -141,24 +141,26 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 		ul.children().removeClass('fa-plus').addClass('fa-minus');
 	};
 
-	$scope.toggleShowHideMenu = function (elem) {
-	var ul = api.ngElement(elem);
-		ul.children().toggleClass('fa-minus fa-plus');
-		if(ul.next()[0].clientHeight)
-			slideUpAll(elem);
-		else
-			slideDownAll(elem);
-	};
+    $scope.toggleShowHideMenu = function (elem) {
+    var ul = api.ngElement(elem);
+        if (ul.hasClass('head')) {
+        ul.children().toggleClass('fa-minus fa-plus');
+        if(ul.next()[0].clientHeight)
+            slideUpAll(elem);
+        else
+            slideDownAll(elem);
+        }
+    };
 
 	$scope.collapseAll = function() {
-		var span = api.getDomElement('#categoriesMenu span.head', true);
+		var span = api.getDomElement('.categoriesMenu span.head', true);
 		for (var i = 0; i < span.length; i++) {
 			slideUpAll(span[i]);
 		}
 	};
 
 	$scope.expandAll = function() {
-		var span = api.getDomElement('#categoriesMenu span.head', true);
+		var span = api.getDomElement('.categoriesMenu span.head', true);
 		for (var i = 0; i < span.length; i++) {
 			slideDownAll(span[i]);
 		}

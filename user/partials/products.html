@@ -3,7 +3,7 @@
   <div class="row" ng-repeat="row in (productCategories.length/boxesInRow | rows)">
     <div class="col-md-6"
     ng-repeat="(key, val) in productCategories.slice(boxesInRow*$index, boxesInRow*$index + boxesInRow)">
-      <div class="well">
+      <div class="well well-categories-menu">
         <div class="row">
 
           <div class="col-md-4">
@@ -18,9 +18,12 @@
               <span ng-switch-default>{{val.name}}</span>
             </h4>
 
-            <ul id="categoryTreeBox">
-              <li ng-repeat="item in val.subLevel" ng-include="categoryTreeBox"></li>
-            </ul>
+            <div class="scrollBoxMenu">
+              <ul class="categoriesMenu">
+                <li ng-repeat="item in val.subLevel" ng-include="categoriesMenu"></li>
+              </ul>
+            </div>
+
           </div>
 
         </div>
