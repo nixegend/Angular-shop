@@ -7,11 +7,10 @@ define(['app', 'RCMservice', 'APIservice'], function (app) {
 
         api.getJSONresponse('categories').then(function (data) {
             $scope.productCategories = rcm.reConstructor(data);
-            console.log(rcm.reConstructor(data));
         });
 
         function slideUpAll(elem) {
-            var ul = api.ngElement(elem);
+        var ul = api.ngElement(elem);
             ul.children().removeClass('fa-minus').addClass('fa-plus');
             ul.next()[0].style.display = 'none';
         };

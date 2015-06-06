@@ -597,7 +597,7 @@ footer p span {
 
 #loginForm {
 	overflow: hidden;
-	padding: 15px 15px 10px 10px;
+	padding: 10px;
 }
 
 #loginForm .input-group-addon {
@@ -606,12 +606,6 @@ footer p span {
 
 #loginForm .input-group {
  width: 100%;
-}
-
-#loginForm .close {
-  position: absolute;
-  right: -4px;
-  top: -4px;
 }
 
 /*=======================================================*/

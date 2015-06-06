@@ -1,12 +1,8 @@
 <form name="loginForm" id="loginForm" ng-submit="logIn(email, password)">
 
-    <button type="button" class="close" ng-click="closeModal()">
-        <i class="fa fa-times-circle"></i>
-    </button>
-
     <div ng-switch="wrongCredentials">
         <div class="alert alert-danger" ng-switch-when="true">
-           <b>Wrong Credentials <i class="fa fa-exclamation-triangle"></i></b>
+           <b><i class="fa fa-exclamation-triangle"></i> Wrong Credentials</b>
         </div>
         <div class="alert alert-info" ng-switch-default>
            <b>Login form</b>
@@ -27,8 +23,18 @@
         </div>
     </div>
 
-    <button type="submit" class="btn btn-primary btn-sm col-md-12" ng-disabled="!password">
-        <i class="fa fa-sign-in"></i> Log in
-    </button>
+    <div class="row">
+        <div class="btn-group btn-group-sm col-md-12">
+            <button type="submit" class="btn btn-primary btn-sm col-md-7" ng-disabled="!password">
+                <i class="fa fa-sign-in"></i> Log in
+            </button>
+            <button type="button" class="btn btn-primary btn-sm col-md-4">
+                Registration
+            </button>
+            <button type="button" class="btn btn-danger btn-sm col-md-1" ng-click="closeModal()">
+                <i class="fa fa-times-circle"></i>
+            </button>
+        </div>
+    </div>
 
 </form>

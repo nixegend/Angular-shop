@@ -91,7 +91,7 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
           });
         };
 
-        $scope.openLoginFormModal = function(size) {
+        $rootScope.openLoginFormModal = function(size) {
           $modal.open({
             size: size,
             templateUrl: '/user/partials/login-form.html',
@@ -106,8 +106,10 @@ define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], func
                   var userObj = $filter('filter')(data, {email : userEmail, password : userPassword})[0];
 
                   if (angular.isObject(userObj)) {
-                      $window.sessionStorage.authorizedUser = userObj.email +'/'+ userObj.name;
-                      window.location.href = window.location.origin+'/admin/';
+                      $window.sessionStorage.authorizedUser = userObj.email +'/'+ userObj.name +'/'+ userObj.password;
+                      $location.path('/admin');
+                      $scope.$close();
+                      //admin@qw.com
                   } else {
                       $scope.wrongCredentials = true;
                       $timeout(function () {
