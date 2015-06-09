@@ -31,19 +31,31 @@ define(['app', 'directBody'], function (app) {
             return $location.url().split('/').indexOf('admin');
         };
 
+        function including(param) {
+            if (param) {
+                $scope.adminView = '/admin/index.html';
+                $scope.cssStyles = '/admin/css/admin-styles.css';
+            } else {
+                $scope.adminView = '/user/index.html';
+                $scope.cssStyles = '/user/css/client-styles.css';
+            }
+        };
+
         function viewSide() {
         if (findAdmin() != -1) {
             getUserData().then(function (data) {
                 if (checkUserCredentials(data)) {
-                    $scope.adminView = '/admin/index.html';
+                    including(true);
                 } else {
-                    $scope.adminView = '/user/index.html';
+                    including(false);
                     $location.path('/');
-                    $rootScope.openLoginFormModal();
+                    $timeout(function() {
+                        $rootScope.openLoginFormModal();
+                    }, 400);
                 }
             });
             } else {
-                $scope.adminView = '/user/index.html';
+                including(false);
             }
         };
 
