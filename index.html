@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title> {{siteName}} > {{pageTitle}} </title>
-  <link rel="stylesheet" type="text/css" ng-href="{{cssStyles}}">
+  <link rel="stylesheet" type="text/css" href="/admin/css/admin-styles.css">
+  <link rel="stylesheet" type="text/css" href="/user/css/client-styles.css">
   <script data-main="core/main.js" src="common/libs/require-2.1.15.min.js"></script>
 </head>
-	<body ng-body>
-    <div ng-include="adminView"></div>
-	</body>
+  <ng-html template="appTemplate" view="appView"></ng-html>
 </html>

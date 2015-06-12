@@ -1,6 +1,6 @@
 define(['app', 'directHeader', 'isActiveLink', 'RCMservice', 'APIservice'], function (app) {
-	app.controller('HeaderCtrl', ['$scope', '$location', '$window', '$rootScope', '$modal', 'rcm', 'api',
-        function ($scope, $location, $window, $rootScope, $modal, rcm, api) {
+	app.controller('HeaderCtrl', ['$scope', '$timeout', '$location', '$window', '$rootScope', '$modal', 'rcm', 'api',
+        function ($scope, $timeout, $location, $window, $rootScope, $modal, rcm, api) {
 
         $scope.langModel = 'en';
         $scope.navMenu = '/user/partials/nav-menu.html';

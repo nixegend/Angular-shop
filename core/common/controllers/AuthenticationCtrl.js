@@ -1,4 +1,4 @@
-define(['app', 'directBody'], function (app) {
+define(['app', 'directHtml'], function (app) {
     app.controller('AuthenticationCtrl', ['$scope', '$http', '$q', '$filter', '$rootScope', '$location', '$timeout', '$window',
         function ($scope, $http, $q, $filter, $rootScope, $location, $timeout, $window) {
 
@@ -33,11 +33,11 @@ define(['app', 'directBody'], function (app) {
 
         function including(param) {
             if (param) {
-                $scope.adminView = '/admin/index.html';
-                $scope.cssStyles = '/admin/css/admin-styles.css';
+                // $scope.cssStyles = '/admin/css/admin-styles.css';
+                $scope.appView = '/admin/index.html';
             } else {
-                $scope.adminView = '/user/index.html';
-                $scope.cssStyles = '/user/css/client-styles.css';
+                // $scope.cssStyles = '/user/css/client-styles.css';
+                $scope.appView = '/user/index.html';
             }
         };
 

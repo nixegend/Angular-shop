@@ -12,7 +12,7 @@ require.config({
 		//------------------- directives ---------------------//
 		'directFooter' : 	'./user/directives/footer',
 		'directHeader' : 	'./user/directives/header',
-		'directBody' : 		'./common/directives/body',
+		'directHtml' : 		'./common/directives/nghtml',
 		'isActiveLink' : 	'./user/directives/isActiveLink'
 	},
 	shim: {
